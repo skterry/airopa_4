@@ -67,21 +67,16 @@ As a result of imperfect knowledge of the spatially varying (i.e. off-axis) PSF 
 %----------------------------------------------------------Observations------------------------------------------------------------------------------------------------------------
 
 \section{Observations} \label{sec:observations}
-All of the NIRC2 observations presented in this work were obtained between 2015 and 2017.
+All of the NIRC2 observations presented in this work were obtained between May 2015 and August 2017. All of the data were reduced identically with a NIRC2 pipeline to correct instrumental effects \citep{ghez:2008a, lu:2008a} and apply geometric distortion corrections \cite{lu:2008a, service:2016a}.
 
 In general, there are many reasons to include a wider range of variable condition data across different stellar fields on-sky, which include; comparing differences in astrometric and photometric residuals (Section \ref{sec:fvu-astrom-results}), testing the effects of varying DIMM/MASS profiles on PSF extraction, testing the fitting precision on datasets with more/less PSF reference stars in the field (i.e. crowded/sparse fields, Sections \ref{sec:ogle-data} and \ref{sec:m53-data}), and determining the reliability of goodness-of-fit and other PSF fitting residuals for extracted sources (Section \ref{sec:fvu}).
 
-\subsection{Galactic Center} \label{sec:gc-data}
-We expand upon the initial on-sky GC testing of \cite{Turri:inprep} by including ``good quality", ``average quality", and ``poor" quality datasets (hereafter GQ, AQ, and PQ respectively) for further AIROPA validations on the Galactic Center (GC).
+\subsection{Galactic Center: A Crowded-field in Varying Conditions} \label{sec:gc-data}
+We expand upon the initial on-sky GC testing of \cite{Turri:inprep} by including ``good quality", ``average quality", and ``poor quality" datasets (hereafter GQ, AQ, and PQ respectively) for further AIROPA validations on the Galactic Center (GC). The Galactic Center case was used as the main science driver for the original development of AIROPA. This case is ideal since there already exists a rich high-resolution dataset spanning several decades, dozens of reference stars for PSF modeling, and a very bright, uniform tip/tilt (TT) guide star that is ${\sim}13$ arcseconds off-axis. The longest-running high-resolution study of the stellar population immediately surrounding Sgr A$^{*}$ is being conducted by the Galactic Center Orbit Initiative. This work has led to a deep and well-understood knowledge \citep{ghez:2005b, ghez:2008a, lu:2008a, do:2019a, gautam:2019a} of the environment immediately surrounding the central supermassive black hole.
 
-\indent The Galactic Center case was used as the main science driver for the original development of AIROPA. This case is ideal since there already exists a rich high resolution dataset spanning several decades, dozens of reference stars for the initial PSF modeling, and a very bright, uniform tip/tilt (TT) guide star that is ${\sim}13$ arcseconds off-axis. The Galactic Center Group at University of California Los Angeles (UCLA) has been conducting the longest-running high resolution study of stellar orbits within the central 10 parsecs of Sgr A$^{*}$, and has led to a deep and well-understood knowledge of the stellar environment immediately surrounding the central supermassive black hole.
+\indent We rank the three GC datasets, GQ, AQ, and PQ based on the historical quality of all GC epochs taken with NIRC2 since 2004 \citep{jia:2019a}. Figure \ref{fig:dimmmass_datasets} shows the median Strehl and FWHM values and standard deviations for all datasets analyzed in this work. The GQ, AQ, and PQ datasets correspond to the black, red, and blue data respectively. The right panel of Figure \ref{fig:dimmmass_datasets} shows the atmosphere profile information from the DIMM/MASS instruments for each dataset, with grey shaded regions representing the time of observation considered in this analysis. The observation timestamps span 8:30pm to 4:30am local HST time. Table \ref{tab:fields-metrics} shows the quality metrics (i.e. median strehl/FWHM/RMS WFE) and observation dates for all datasets analyzed.
 
-\subsubsection{GC Dataset Selection} \label{sec:gc-data-selection}
-We choose the three GC datasets, GQ, AQ, and PQ based on the historical quality of all GC epochs taken with NIRC2 since 2004. Figure \ref{fig:dimmmass_datasets} shows the median Strehl and FWHM values and standard deviations for all datasets analyzed in this work. The GQ, AQ, and PQ datasets correspond to the black, red, and blue data respectively. The right panel of Figure \ref{fig:dimmmass_datasets} shows the atmosphere profile information from the DIMM/MASS instruments for each dataset, with grey shaded regions representing the time of observation considered in this analysis. The observation timestamps span 8:30pm to 4:30am local HST time. Table \ref{tab:fields-metrics} shows the quality metrics (i.e. median strehl/FWHM/RMS WFE) and observation dates for all datasets analyzed.
-
-The GQ dataset was taken on 2017-08-11, The AQ data were taken $\sim$two weeks after the GQ data, on 2017-08-23. The PQ data were taken on 2016-05-03. All datasets were acquired on Keck-II with the Near-Infrared Camera 2 (NIRC2) instrument in laser guide star adaptive optics (LGSAO) mode and with the K$_\textrm{p}$ filter ($\lambda = 2.12 \mu m$). For all datasets, each frame was composed of 10 coadded exposures at 2.8s per coadd for a total exposure time of 28s per frame. One caveat about the PQ dataset is that there does not exist phase diversity calibration data from 2016, therefore the 2017 instrumental phase maps were used to substitute for the 2016 phase maps. Although it has been shown that the NIRC2 phase maps change on roughly yearly timescales \citep{Ciurlo:inprep}, the difference between 2016 and 2017 phase diversity is small enough for an analysis of the kind presented in this work. Figure \ref{fig:gc_images} shows one frame from each of the three epochs, with the spatial scale given as the separation (in arcsecond) from the image sharpening position, at center frame.
-
-All three GC datasets (as well as the other fields presented in this work) were reduced identically, with the standard NIRC2 pipeline to correct instrumental effects \citep{ghez:2008a, lu:2008a} and apply geometric distortion corrections \cite{lu:2008a, service:2016a}.
+The GQ dataset was taken on 2017-08-11, The AQ data were taken $\sim$two weeks after the GQ data, on 2017-08-23, and the PQ data were taken on 2016-05-03. Dates are given in Hawaiian standard time (HST). Each datasets were acquired on Keck-II with the Near-Infrared Camera 2 (NIRC2) narrow camera instrument in laser guide star adaptive optics (LGSAO) mode and with the K$_\textrm{p}$ filter ($\lambda_{c} = 2.12 \mu m$). The plate scale for the NIRC2 narrow camera is 9.942 mas/pix. For all datasets, each frame was composed of 10 coadded exposures at 2.8s per coadd for a total exposure time of 28s per frame. One note about the PQ dataset; there does not exist phase diversity calibration data from 2016, therefore the 2017 instrumental phase maps were used to substitute for the 2016 phase maps. This is not an issue, as \cite{Ciurlo:inprep} show that the phase maps can remain stable across multiple years, and any potential difference between 2016 and 2017 phase diversity is likely small enough for an analysis of the kind presented in this work. Figure \ref{fig:gc_images} shows one frame from each of the three epochs, with the spatial scale given as the separation (in arcsecond) from the image sharpening position, at center frame.
 
 \begin{figure}[!htb]
  \makebox[\textwidth][c]{
@@ -99,27 +94,20 @@ All three GC datasets (as well as the other fields presented in this work) were 
 
 \begin{table}[!ht]
 \centering
-\caption{Observational data used for the analysis described in Sections \ref{sec:gc-data}, \ref{sec:ogle-data}, and \ref{sec:m53-data}.} \label{tab:fields-metrics}
-\begin{tabular}{|l|l|r|r|r|}
+\caption{Observational data presented in Sections \ref{sec:gc-data}, \ref{sec:ogle-data}, and \ref{sec:m53-data}.} \label{tab:fields-metrics}
+\begin{tabular}{|l|c|c|c|c|c|}
 \hline
-        Field &  Date [UT] &  Strehl Ratio &  FWHM [mas] &  RMS WFE [nm] \\\hline\hline
-        GC (``good") &   2017 Aug 11 & $0.411 \pm 0.039$ & $53.420 \pm 4.472$ & $318.750 \pm 17.969$ \\
-        GC (``average") &   2017 Aug 23 & $0.285 \pm 0.024$ & $65.715 \pm 3.429$ & $379.150 \pm 13.058$ \\
-        GC (``poor") &   2016 May 03 & $0.201 \pm 0.025$ & $81.535 \pm 6.619$ & $428.350 \pm 17.865$ \\
-        OB150029 &    2016 Jul 14 &  $0.392 \pm 0.037$ & $48.430 \pm 1.946$ & $327.050 \pm 17.066$ \\
-        M53 (PA$=$0) &   2015 May 05 &  $0.266 \pm 0.081$ & $62.145 \pm 7.771$ & $389.950 \pm 43.717$ \\
-        M53 (PA$=$90) &   2015 May 05 & $0.350 \pm 0.026$ & $54.725 \pm 1.284$ & $346.650 \pm 12.341$ \\\hline
+        Field &  Date [UT] &  Strehl Ratio &  FWHM [mas] &  RMS WFE [nm] & Total Exp. Time [s] \\\hline\hline
+        GC (GQ) &   2017 Aug 11 & $0.41 \pm 0.039$ & $53 \pm 4.5$ & $320 \pm 18$ & 168\\
+        GC (AQ) &   2017 Aug 23 & $0.29 \pm 0.024$ & $66 \pm 3.5$ & $380 \pm 13$ & 168\\
+        GC (PQ) &   2016 May 03 & $0.21 \pm 0.025$ & $82 \pm 6.6$ & $430 \pm 18$ & 168\\
+        OB150029 &    2016 Jul 14 &  $0.39 \pm 0.037$ & $48 \pm 1.9$ & $330 \pm 17$ & 180\\
+        M53 (PA$=$0) &   2015 May 05 &  $0.27 \pm 0.081$ & $62 \pm 7.8$ & $390 \pm 44$ & 300\\
+        M53 (PA$=$90) &   2015 May 05 & $0.35 \pm 0.026$ & $55 \pm 1.3$ & $350 \pm 12$ & 300\\\hline
 \end{tabular}
 \end{table}
 
-\subsection{Fraction of Variance Unexplained} \label{sec:fvu}
-An important metric that we use (for all six datasets) to determine the ``quality of the fit" for each PSF-mode inside AIROPA is the fraction of variance unexplained (FVU). This metric is defined as the ratio between the variance of the residuals and the variance of the image itself, and is given by:
-
-\begin{equation}
-    FVU = \frac{\sigma^{2}_{\textrm{res}}}{\sigma^{2}_{\textrm{img}}}
-\end{equation}
-
-where $\sigma^{2}_{\textrm{res}}$ is the variance of the residual, and $\sigma^{2}_{\textrm{img}}$ is the variance of the image itself. According to \cite{Ciurlo:inprep}, the FVU is only a reliable metric for brighter stars because they are minimally affected by noise, with the largest error contribution coming from systematics on the PSF. Figure \ref{fig:fvu_grid} shows the single/variable FVU comparison for all six datasets. The variable-PSF mode improvements to FVU are marginal at best, and further details are given in section \ref{sec:fvu-astrom-results}. This discrepancy was also discovered in \cite{Turri:inprep}, where they showed significant improvement to the FVU in simulated data, but effectively no improvement in on-sky comparisons. This implies that there are additional aberrations in the AO system that are not accounted for when moving from fiber source calibrations to on-sky science data.
+%Regarding FVU on bright/faint stars.
 
 \begin{figure}
  \makebox[\textwidth][c]{
@@ -137,7 +125,7 @@ where $\sigma^{2}_{\textrm{res}}$ is the variance of the residual, and $\sigma^{
 
 %----------------AIROPA ON OB150029------------------------------------------------------------------------------------------------------------
  
-\section{OGLE-2015-BLG-0029} \label{sec:ogle-data}
+\subsection{OGLE-2015-BLG-0029: A Less-crowded Microlensing Field} \label{sec:ogle-data}
 The Optical Gravitational Lensing Experiment (OGLE) survey \cite{udalski:1992a} conducts wide-field visible and near-IR imaging of nearly the entire Galactic Bulge region at high cadence, and detects over 1000 microlensing events every season. Most ground-based imaging data from current microlensing surveys are focused in regions $3\degree > l > 357\degree$ and $-2.5\degree < b < 2.5\degree$. The first non-GC data analyzed in this work is OGLE-2015-BLG-0029 (hereafter OB150029), located at RA $=$ 17:59:46.60, DEC $=$ -28:38:41.80 and Galactic coordinates ($l,b = (1.828\degree, -2.523\degree$)). This target has been regularly monitored with NIRC2 since 2015 as part of a project to study isolated stellar-mass black hole candidates \citep{lu:inprep}.
 
 \begin{figure}[!h]
@@ -160,8 +148,8 @@ The OB150029 observations were taken on 2016-07-14 in LGSAO mode with the Kp fil
 
 %----------------AIROPA ON M53------------------------------------------------------------------------------------------------------------
 
-\section{M53} \label{sec:m53-data}
-The globular cluster M53 (NGC 5024) located at RA $=$ 13:12:54.51, DEC $=$ 18:10:13.95 was observed with the NIRC2 Kp filter on 2015-05-04 as part of a project to characterize the NIRC2 geometric distortion \cite{service:2016a}. This was accomplished by comparing the NIRC2 stellar positions to precise astrometry from \textit{Hubble Space Telescope} (HST) \textit{Advanced Camera for Surveys} (ACS) observations. The NIRC2 camera and AO system was realigned in April 2015, and observations of M53 before and after this realignment show an increase in the averaged geometric distortion from $\sim$0.5 mas pre-realignment to $\sim$1.1 mas post-realignment.
+\subsection{M53: Globular Cluster Observations at Different Position Angles} \label{sec:m53-data}
+The globular cluster M53 (NGC 5024) located at RA $=$ 13:12:54.51, DEC $=$ 18:10:13.95 was observed with the NIRC2 narrow camera Kp filter on 2015-05-04 as part of a project to characterize the NIRC2 geometric distortion \cite{service:2016a}. This was accomplished by comparing the NIRC2 stellar positions to precise astrometry from \textit{Hubble Space Telescope} (HST) \textit{Advanced Camera for Surveys} (ACS) observations. The NIRC2 camera and AO system was realigned in April 2015, and observations of M53 before and after this realignment show an increase in the averaged geometric distortion from $\sim$0.5 mas pre-realignment to $\sim$1.1 mas post-realignment.
 
 \begin{figure}[!htb]
  \makebox[\textwidth][c]{
@@ -172,7 +160,6 @@ The globular cluster M53 (NGC 5024) located at RA $=$ 13:12:54.51, DEC $=$ 18:10
 
 Importantly, the NIRC2 observations were taken at two different position angles (PA); 0$\degree$ and 90$\degree$. These prior observations present a unique dataset for us to compare the astrometric accuracy between single-PSF and variable-PSF modes in AIROPA as a function of PA. As illustrated in the top-right panel of Figure \ref{fig:gc_astrom}, the astrometric differences between single-PSF mode and variable-PSF mode become more severe at larger radii from the central on-axis position. This is predominantly caused by the difference in PSF shape between the spatially varying model and the static model, particularly closer to the sides and edges of the NIRC2 frame. However there is evidence that residual instrumental aberrations still persist in the system \citep{Turri:inprep}, a comparison of these astrometric differences at two different PA's may help to give further insight on possible causes of the remaining aberration. Recently, it has also been shown that a dominant source of error in the PSF comes from primary segment misalignments (O. Beltramo-Martin in private communication). The work shows several hundred nm of wavefront error (WFE) coming from the primary piston segments, which can become misaligned as quickly as hours after initial alignment. Currently, the Keck-II primary mirror segments are realigned every two-weeks, however these results show that the cadence may need to be increased in order to minimize any contribution to the PSF error from this primary segment phasing.
 
-\subsection{Comparing Two Position Angles}
 The M53 dataset includes six frames taken at a position angle of 0\degree (i.e. North up, East left), and six frames taken at a position angle of 90\degree (i.e. East up, South left). The PA $=0$ dataset consists of two frames taken at the central pointing, and four frames taken after a dither of $\Delta_x = -0.14", \Delta_y = 0.16"$. The PA $=90$ dataset consists of three frames taken at the central pointing, and three frames taken after a dither of $\Delta_x = +0.14", \Delta_y = -0.19"$. The total exposure time is 10 seconds per frame for both PAs. Figure \ref{fig:m53_image_grid} shows one frame taken at PA 0 and the accompanying grid of FWHM values from AIROPA variable-PSF mode, as well as a PA 90 frame and FWHM grid. The same TT guide star was used for both PAs, which has magnitude R ${\sim}$ 13.5 located 24" West and 12" South of the central pointing.
 
 AIROPA was run on all images at each PA using the same 10 PSF reference stars which are shown as data points colored by magnitude in the bottom panels of Figure \ref{fig:m53_image_grid}. Both the variable and single-PSF mode astrometric and photometric extractions were performed on each image. Additionally, stellar positions and magnitudes from the four undithered PA $=0$ frames were then averaged, and the averaged star list was transformed to the reference star list frame. We used the PA$=$90 star list as the reference list since the data is of higher quality than PA$=$0. The PA$=$0 dataset is measurably lower quality than the PA$=$90 dataset; $\overline{\textrm{SR}}_{0\degree} = 0.76^{*}\overline{\textrm{SR}}_{90\degree}$, $\overline{\textrm{FWHM}}_{0\degree}$ $= 1.14^{*}\overline{\textrm{FWHM}}_{90\degree}$. This likely effects the astrometric precision between the PA$=$0 $\rightarrow$ PA$=$90 transformation by $\sim$XX\%.
@@ -197,7 +184,18 @@ The averaged starlists from both PA's were also matched and transformed to the G
 
 %----------------FVU and Astrometry Results------------------------------------------------------------------------------------------------------------
 
-\section{FVU and Astrometry Results} \label{sec:fvu-astrom-results}
+\section{Fraction of Variance Unexplained} \label{sec:fvu}
+An important metric that we use (for all six datasets) to determine the ``quality of the fit" for each PSF-mode inside AIROPA is the fraction of variance unexplained (FVU). This metric is defined as the ratio between the variance of the residuals and the variance of the image itself, and is given by:
+
+\begin{equation}
+    FVU = \frac{\sigma^{2}_{\textrm{res}}}{\sigma^{2}_{\textrm{img}}}
+\end{equation}
+
+where $\sigma^{2}_{\textrm{res}}$ is the variance of the residual, and $\sigma^{2}_{\textrm{img}}$ is the variance of the image itself. According to \cite{Ciurlo:inprep}, the FVU is only a reliable metric for brighter stars because they are minimally affected by noise, with the largest error contribution coming from systematics on the PSF. Figure \ref{fig:fvu_grid} shows the single/variable FVU comparison for all six datasets. The variable-PSF mode improvements to FVU are marginal at best, and further details are given in section \ref{sec:fvu-astrom-results}. This discrepancy was also discovered in \cite{Turri:inprep}, where they showed significant improvement to the FVU in simulated data, but effectively no improvement in on-sky comparisons. This implies that there are additional aberrations in the AO system that are not accounted for when moving from fiber source calibrations to on-sky science data.
+
+%----------------FVU and Astrometry Results------------------------------------------------------------------------------------------------------------
+
+\section{Results} \label{sec:fvu-astrom-results}
 Our analysis of six independent NIRC2 on-sky datasets show marginal or no improvement in astrometric residuals between the static PSF model and spatially variable PSF model within AIROPA. A comparison of the FVU metric between the two modes shows similar results. This implies that the ability of AIROPA to reconstruct the PSF for a wide range on-sky data remains limited by unaccounted for aberrations in the telescope. We also show that the effect of varying atmospheric conditions, number and spatial location of selected PSF reference stars, and telescope PA do not have a significant effect on the performance of AIROPA in either of the modes.
 
 \begin{figure}[!h]
