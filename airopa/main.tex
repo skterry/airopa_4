@@ -57,47 +57,28 @@ As a result of imperfect knowledge of the spatially varying (i.e. off-axis) PSF 
 
 \indent This study is the fourth in a series of papers detailing the AIROPA package; \cite{witzel:2016a} introduces AIROPA and gives an overview of the software structure. Characterization of the Keck-II/NIRC2 instrumental aberrations and AIROPA's usage of this aberration data is given in \cite{Ciurlo:inprep}, and \cite{Turri:inprep} perform tests of AIROPA on simulated and on-sky GC images. In this paper we focus on on-sky tests of AIROPA. The paper is organized as follows: Section \ref{sec:gc-data} describes the analysis of a very crowded field through three independent Galactic Center datasets. In Section \ref{sec:ogle-data}, we describe a less-crowded field for a typical gravitational microlensing science case. In Section \ref{sec:m53-data} we detail the observations of globular cluster Messier 53 (M53) taken at different position angles (PA). The astrometric results and other PSF fitting metrics are given in Section \ref{sec:fvu-astrom-results}. We give a final discussion and conclude the paper in Section \ref{sec:conclusion}.
 
-\begin{figure}[!h]
- \makebox[\textwidth][c]{
- \includegraphics[width=1.3\textwidth]{Figures/metrics_dimmmass.pdf}
- }
- \caption{\footnotesize \textit{Left}: Strehl ratio and FWHM median and standard deviation for all datasets analyzed in this work. \textit{Right}: 0.5$\mu m$ DIMM/MASS seeing profiles for each dataset, respectively. Grey shaded region represents time of observation for each set. Six cleaned frames were analyzed for the GC and OB150029, and eight frames were analyzed for M53 (both PA's). \label{fig:dimmmass_datasets}}
-\end{figure}
-
 %----------------------------------------------------------Observations------------------------------------------------------------------------------------------------------------
 
 \section{Observations} \label{sec:observations}
-All of the NIRC2 observations presented in this work were obtained between May 2015 and August 2017. All of the data were reduced identically with a NIRC2 pipeline to correct instrumental effects \citep{ghez:2008a, lu:2008a} and apply geometric distortion corrections \cite{lu:2008a, service:2016a}.
-
-In general, there are many reasons to include a wider range of variable condition data across different stellar fields on-sky, which include; comparing differences in astrometric and photometric residuals (Section \ref{sec:fvu-astrom-results}), testing the effects of varying DIMM/MASS profiles on PSF extraction, testing the fitting precision on datasets with more/less PSF reference stars in the field (i.e. crowded/sparse fields, Sections \ref{sec:ogle-data} and \ref{sec:m53-data}), and determining the reliability of goodness-of-fit and other PSF fitting residuals for extracted sources (Section \ref{sec:fvu}).
-
-\subsection{Galactic Center: A Crowded-field in Varying Conditions} \label{sec:gc-data}
-We expand upon the initial on-sky GC testing of \cite{Turri:inprep} by including ``good quality", ``average quality", and ``poor quality" datasets (hereafter GQ, AQ, and PQ respectively) for further AIROPA validations on the Galactic Center (GC). The Galactic Center case was used as the main science driver for the original development of AIROPA. This case is ideal since there already exists a rich high-resolution dataset spanning several decades, dozens of reference stars for PSF modeling, and a very bright, uniform tip/tilt (TT) guide star that is ${\sim}13$ arcseconds off-axis. The longest-running high-resolution study of the stellar population immediately surrounding Sgr A$^{*}$ is being conducted by the Galactic Center Orbit Initiative. This work has led to a deep and well-understood knowledge \citep{ghez:2005b, ghez:2008a, lu:2008a, do:2019a, gautam:2019a} of the environment immediately surrounding the central supermassive black hole.
-
-\indent We rank the three GC datasets, GQ, AQ, and PQ based on the historical quality of all GC epochs taken with NIRC2 since 2004 \citep{jia:2019a}. Figure \ref{fig:dimmmass_datasets} shows the median Strehl and FWHM values and standard deviations for all datasets analyzed in this work. The GQ, AQ, and PQ datasets correspond to the black, red, and blue data respectively. The right panel of Figure \ref{fig:dimmmass_datasets} shows the atmosphere profile information from the DIMM/MASS instruments for each dataset, with grey shaded regions representing the time of observation considered in this analysis. The observation timestamps span 8:30pm to 4:30am local HST time. Table \ref{tab:fields-metrics} shows the quality metrics (i.e. median strehl/FWHM/RMS WFE), observation dates, and total exposure times for all datasets analyzed.
-
-The GQ dataset was taken on 2017-08-11, The AQ data were taken $\sim$two weeks after the GQ data, on 2017-08-23, and the PQ data were taken on 2016-05-03. Dates are given in Hawaiian standard time (HST). Each datasets were acquired on Keck-II with the Near-Infrared Camera 2 (NIRC2) narrow camera instrument in laser guide star adaptive optics (LGSAO) mode and with the K$_\textrm{p}$ filter ($\lambda_{c} = 2.12 \mu m$). The plate scale for the NIRC2 narrow camera is 9.942 mas/pix. For all datasets, each frame was composed of 10 coadded exposures at 2.8s per coadd for a total exposure time of 28s per frame. One note about the PQ dataset; there does not exist phase diversity calibration data from 2016, therefore the 2017 instrumental phase maps were used to substitute for the 2016 phase maps. This is not an issue, as \cite{Ciurlo:inprep} show that the phase maps can remain stable across multiple years, and any potential difference between 2016 and 2017 phase diversity is likely small enough for an analysis of the kind presented in this work. Figure \ref{fig:gc_images} shows one frame from each of the three epochs, with the spatial scale given as the separation (in arcsecond) from the image sharpening position, at center frame.
+All datasets presented in this work were acquired on Keck-II with the Near-Infrared Camera 2 (NIRC2) narrow camera instrument in laser guide star adaptive optics (LGSAO) mode and with the K$_\textrm{p}$ filter ($\lambda_{c} = 2.12 \mu m$). The plate scale for the NIRC2 narrow camera is 9.942 mas/pix, and all the data were taken between May 2015 and August 2017.
 
 \begin{figure}[!htb]
  \makebox[\textwidth][c]{
- \hspace*{-0.5cm}\includegraphics[width=1.15\textwidth]{Figures/gc_images.pdf}
+ \includegraphics[width=1.2\textwidth]{Figures/metrics_dimmmass.pdf}
  }
- \caption{\footnotesize \textit{Left}: Good-quality Galactic Center frame. \textit{Middle}: Average-quality Galactic Center frame. \textit{Right}: Poor-quality Galactic Center frame. All images have the same color scale, the axes represent on-sky separation (in arcsec) from the on-axis (i.e. center) frame position. \label{fig:gc_images}}
+ \caption{\footnotesize \textit{Left}: Strehl ratio and FWHM median and standard deviation for all datasets analyzed in this work. \textit{Right}: 0.5$\mu m$ DIMM/MASS seeing profiles for each dataset, respectively. Grey shaded region represents time of observation for each set. Six cleaned frames were analyzed for each dataset. \label{fig:dimmmass_datasets}}
 \end{figure}
 
-%\begin{figure}[!htb]
-% \makebox[\textwidth][c]{
-% \includegraphics[width=1.1\textwidth]{Figures/gc_psf_compare.pdf}
-% }
-% \caption{\footnotesize Extracted on-axis PSFs for good(\textit{left}), average(\textit{center}), and poor(\textit{right}) frames respectively. Strehl ratio and FWHM values are displayed above each figure. Each PSF is centered at [150.5, 150.5].} \label{fig:gc-psf-compare}
-%\end{figure}
+\noindent A total of six cleaned frames from each dataset were reduced identically with a NIRC2 pipeline to correct instrumental effects \citep{ghez:2008a, lu:2008a} and apply geometric distortion corrections \cite{lu:2008a, service:2016a}. North is up and East is left in all observations, with one exception for the PA $=$ 90 observations East is up and South is left.
 
-\begin{table}[!ht]
+There are many reasons to include a wide range of variable condition data across different stellar fields on-sky, which include; testing the effects of varying DIMM/MASS profiles on PSF extraction (Section \ref{sec:gc-data}), testing the fitting precision on datasets with more/less PSF reference stars in the field (i.e. crowded/sparse fields, Sections \ref{sec:ogle-data} and \ref{sec:m53-data}), and determining the reliability of goodness-of-fit and other PSF fitting residuals for extracted sources (Sections \ref{sec:fvu} and \ref{sec:fvu-astrom-results}).
+
+\begin{table}[!h]
 \centering
 \caption{Observational data presented in Sections \ref{sec:gc-data}, \ref{sec:ogle-data}, and \ref{sec:m53-data}.} \label{tab:fields-metrics}
 \begin{tabular}{|l|c|c|c|c|c|}
 \hline
-        Field &  Date [UT] &  Strehl Ratio &  FWHM [mas] &  RMS WFE [nm] & Total Exp. Time [s] \\\hline\hline
+        Field &  Date [UT] &  Strehl Ratio &  FWHM [mas] &  RMS WFE [nm] & Exp. Time [s] \\\hline\hline
         GC (GQ) &   2017 Aug 11 & $0.41 \pm 0.039$ & $53 \pm 4.5$ & $320 \pm 18$ & 168\\
         GC (AQ) &   2017 Aug 23 & $0.29 \pm 0.024$ & $66 \pm 3.5$ & $380 \pm 13$ & 168\\
         GC (PQ) &   2016 May 03 & $0.21 \pm 0.025$ & $82 \pm 6.6$ & $430 \pm 18$ & 168\\
@@ -107,21 +88,35 @@ The GQ dataset was taken on 2017-08-11, The AQ data were taken $\sim$two weeks a
 \end{tabular}
 \end{table}
 
-%Regarding FVU on bright/faint stars.
+\subsection{Galactic Center: A Crowded-field in Varying Conditions} \label{sec:gc-data}
+We expand upon the initial on-sky GC testing of \cite{Turri:inprep} by including ``good quality", ``average quality", and ``poor quality" datasets (hereafter GQ, AQ, and PQ respectively) for further AIROPA validations on the Galactic Center (GC). The Galactic Center case was used as the main science driver for the original development of AIROPA. This case is ideal since there already exists a rich high-resolution dataset spanning several decades, dozens of reference stars for PSF modeling, and a very bright, uniform tip/tilt (TT) guide star that is ${\sim}13$ arcseconds off-axis. The longest-running high-resolution study of the stellar population immediately surrounding Sgr A$^{*}$ is being conducted by the Galactic Center Orbit Initiative. This work has led to a deep and well-understood knowledge \citep{ghez:2005b, ghez:2008a, lu:2008a, do:2019a, gautam:2019a} of the environment immediately surrounding the central supermassive black hole.
+
+\begin{figure}[!h]
+ \makebox[\textwidth][c]{
+ \hspace*{-0.5cm}\includegraphics[width=1.15\textwidth]{Figures/gc_images.pdf}
+ }
+ \caption{\footnotesize \textit{Left}: Good-quality Galactic Center frame. \textit{Middle}: Average-quality Galactic Center frame. \textit{Right}: Poor-quality Galactic Center frame. All images have the same color scale, the axes represent on-sky separation (in arcsec) from the on-axis (i.e. center) frame position. \label{fig:gc_images}}
+\end{figure}
 
 \begin{figure}
  \makebox[\textwidth][c]{
  \hspace*{0.5cm}\includegraphics[width=1.2\textwidth]{Figures/fwhm_grids.pdf}
  }
- \caption{\footnotesize Grid of FWHM values from AIROPA variable-PSF mode on the GQ (left), AQ (middle) and PQ (right) datasets. The yellow star at the central pointing represents the on-axis LGS position, colored circle points correspond to locations and K-band magnitudes of primary PSF reference stars. A straight line connects the on-aixs LGS position to the off-axis TT guide star location. \label{fig:fwhm_grids}}
+ \caption{\footnotesize Grid of FWHM values from AIROPA variable-PSF mode on the GQ (left), AQ (middle) and PQ (right) datasets. Colored circle points correspond to locations and K-band magnitudes of primary PSF reference stars. A straight line connects the on-aixs LGS position to the off-axis TT guide star location. \label{fig:fwhm_grids}}
 \end{figure}
 
-\begin{figure}
- \makebox[\textwidth][c]{
- \includegraphics[width=1.0\textwidth]{Figures/SV_astrometry_quad.pdf}
- }
- \caption{\footnotesize \textit{Top-left}: Averaged positional difference in X and Y between single and variable-PSF modes for the AQ dataset. Yellow data corresponds to K $<$ 13 stars, blue data shows all stars detected. \textit{Top-right}: Quiver plot showing the astrometric differences. \textit{Lower-left}: Astrometric difference as a function distance from the central pointing in X directions. \textit{Lower-right}: Same as lower-left, but for Y directions. The solid black line shows a third-order polynomial fit to all data points, with a shaded region representing 1$\sigma$ spread about the mean. \label{fig:gc_astrom}}
-\end{figure}
+\indent We rank the three GC datasets, GQ, AQ, and PQ based on the historical quality of all GC epochs taken with NIRC2 since 2004 \citep{jia:2019a}. Figure \ref{fig:dimmmass_datasets} shows the median Strehl and FWHM values and standard deviations for all datasets analyzed in this work. The GQ, AQ, and PQ datasets correspond to the black, red, and blue data respectively. The right panel of Figure \ref{fig:dimmmass_datasets} shows the atmosphere profile information from the DIMM/MASS instruments for each dataset, with grey shaded regions representing the time of observation considered in this analysis. The observation timestamps span 8:30pm to 4:30am local HST time. Table \ref{tab:fields-metrics} shows the quality metrics (i.e. median strehl/FWHM/RMS WFE), observation dates, and total exposure times for all datasets analyzed.
+
+The GQ dataset was taken on 2017-08-11, The AQ data were taken $\sim$two weeks after the GQ data, on 2017-08-23, and the PQ data were taken on 2016-05-03. Dates are given in Hawaiian standard time (HST). For all GC datasets, each frame was composed of 10 coadded exposures at 2.8s per coadd for a total exposure time of 28s per frame. One note about the PQ dataset; there does not exist phase diversity calibration data from 2016, therefore the 2017 instrumental phase maps were used to substitute for the 2016 phase maps. This is not an issue, as \cite{Ciurlo:inprep} show that the phase maps can remain stable across multiple years, and any potential difference between 2016 and 2017 phase diversity is likely small enough for an analysis of the kind presented in this work. Figure \ref{fig:gc_images} shows one frame from each of the three epochs, with the spatial scale given as the separation (in arcseconds) from the on-axis position (i.e. image center). Figure \ref{fig:fwhm_grids} shows the grid of FWHM values measured by AIROPA variable-PSF mode for each frame, plotted over the field of view to give a visualization of the field-dependent PSF. The FWHM grid values are calculated for every PSF generated by AIROPA in the PSF grid file, \textit{*\_on\_axis\_psf.fits}. The AIROPA grid files for the fields analyzed in this work use a partition size (i.e. step width of the PSF grid) of 102. 
+
+%Regarding FVU on bright/faint stars.
+
+%\begin{figure}
+% \makebox[\textwidth][c]{
+% \includegraphics[width=1.0\textwidth]{Figures/SV_astrometry_quad.pdf}
+% }
+% \caption{\footnotesize \textit{Top-left}: Averaged positional difference in X and Y between single and variable-PSF modes for the AQ dataset. Yellow data corresponds to K $<$ 13 stars, blue data shows all stars detected. \textit{Top-right}: Quiver plot showing the astrometric differences. \textit{Lower-left}: Astrometric difference as a function distance from the central pointing in X directions. \textit{Lower-right}: Same as lower-left, but for Y directions. The solid black line shows a third-order polynomial fit to all data points, with a shaded region representing 1$\sigma$ spread about the mean. \label{fig:gc_astrom}}
+%\end{figure}
 
 %----------------AIROPA ON OB150029------------------------------------------------------------------------------------------------------------
  
@@ -141,14 +136,14 @@ The OB150029 observations were taken on 2016-07-14 in LGSAO mode with the Kp fil
 
 \begin{figure}[!h]
  \makebox[\textwidth][c]{
- \includegraphics[width=1.1\textwidth]{airopa/Figures/ob150029_targ_res.pdf}
+ \hspace*{-0.5cm}\includegraphics[width=1.1\textwidth]{airopa/Figures/ob150029_targ_res.pdf}
  }
- \caption{\footnotesize Single image of the target OB150029 (left) and residual images from the single-PSF (middle) and variable-PSF (right) modes. Residual images have identical color scales, and green points show the location of star detections.} \label{fig:ob150029-targ-res}
+ \caption{\footnotesize Single image of the target OB150029 (\textit{left}) and residual images from the single-PSF (\textit{middle}) and variable-PSF (\textit{right}) modes. Residual images have identical color scales, and green points show the location of star detections.} \label{fig:ob150029-targ-res}
 \end{figure}
 
 %----------------AIROPA ON M53------------------------------------------------------------------------------------------------------------
 
-\subsection{M53: Globular Cluster Observations at Different Position Angles} \label{sec:m53-data}
+\subsection{M53: A Globular Cluster at Different Position Angles} \label{sec:m53-data}
 The globular cluster M53 (NGC 5024) located at RA $=$ 13:12:54.51, DEC $=$ 18:10:13.95 was observed with the NIRC2 narrow camera Kp filter on 2015-05-04 as part of a project to characterize the NIRC2 geometric distortion \cite{service:2016a}. This was accomplished by comparing the NIRC2 stellar positions to precise astrometry from \textit{Hubble Space Telescope} (HST) \textit{Advanced Camera for Surveys} (ACS) observations. The NIRC2 camera and AO system was realigned in April 2015, and observations of M53 before and after this realignment show an increase in the averaged geometric distortion from $\sim$0.5 mas pre-realignment to $\sim$1.1 mas post-realignment.
 
 \begin{figure}[!htb]
@@ -160,13 +155,7 @@ The globular cluster M53 (NGC 5024) located at RA $=$ 13:12:54.51, DEC $=$ 18:10
 
 Importantly, the NIRC2 observations were taken at two different position angles (PA); 0$\degree$ and 90$\degree$. These prior observations present a unique dataset for us to compare the astrometric accuracy between single-PSF and variable-PSF modes in AIROPA as a function of PA. As illustrated in the top-right panel of Figure \ref{fig:gc_astrom}, the astrometric differences between single-PSF mode and variable-PSF mode become more severe at larger radii from the central on-axis position. This is predominantly caused by the difference in PSF shape between the spatially varying model and the static model, particularly closer to the sides and edges of the NIRC2 frame. However there is evidence that residual instrumental aberrations still persist in the system \citep{Turri:inprep}, a comparison of these astrometric differences at two different PA's may help to give further insight on possible causes of the remaining aberration. Recently, it has also been shown that a dominant source of error in the PSF comes from primary segment misalignments (O. Beltramo-Martin in private communication). The work shows several hundred nm of wavefront error (WFE) coming from the primary piston segments, which can become misaligned as quickly as hours after initial alignment. Currently, the Keck-II primary mirror segments are realigned every two-weeks, however these results show that the cadence may need to be increased in order to minimize any contribution to the PSF error from this primary segment phasing.
 
-The M53 dataset includes six frames taken at a position angle of 0\degree (i.e. North up, East left), and six frames taken at a position angle of 90\degree (i.e. East up, South left). The PA $=0$ dataset consists of two frames taken at the central pointing, and four frames taken after a dither of $\Delta_x = -0.14", \Delta_y = 0.16"$. The PA $=90$ dataset consists of three frames taken at the central pointing, and three frames taken after a dither of $\Delta_x = +0.14", \Delta_y = -0.19"$. The total exposure time is 10 seconds per frame for both PAs. Figure \ref{fig:m53_image_grid} shows one frame taken at PA 0 and the accompanying grid of FWHM values from AIROPA variable-PSF mode, as well as a PA 90 frame and FWHM grid. The same TT guide star was used for both PAs, which has magnitude R ${\sim}$ 13.5 located 24" West and 12" South of the central pointing.
-
-AIROPA was run on all images at each PA using the same 10 PSF reference stars which are shown as data points colored by magnitude in the bottom panels of Figure \ref{fig:m53_image_grid}. Both the variable and single-PSF mode astrometric and photometric extractions were performed on each image. Additionally, stellar positions and magnitudes from the four central-pointing PA $=0$ frames were then averaged, and the averaged star list was transformed to the reference star list frame. We used the PA$=$90 star list as the reference list since the data is of higher quality than PA$=$0. The PA$=$0 dataset is measurably lower quality than the PA$=$90 dataset; $\overline{\textrm{SR}}_{0\degree} = 0.76^{*}\overline{\textrm{SR}}_{90\degree}$, $\overline{\textrm{FWHM}}_{0\degree}$ $= 1.14^{*}\overline{\textrm{FWHM}}_{90\degree}$. This likely effects the astrometric precision between the PA$=$0 $\rightarrow$ PA$=$90 transformation by $\sim$XX\%.
-
-The averaged starlists from both PA's were also matched and transformed to the Gaia EDR3 \citep{brown:2021a}. There were a total of 32 matched stars between both PA's and Gaia, which can be seen in Figure \ref{fig:m53_PA_compare_gaia}. The quiver plots in the top panels of Figure \ref{fig:m53_PA_compare_gaia} look nearly identical because the astrometric differences between the two PSF modes is significantly smaller than the astrometric difference between the AIROPA and Gaia positions. The faintest stars have the largest astrometric residuals, as expected. 
-
-\begin{figure}
+\begin{figure}[!h]
   \centering
   \subfloat{\includegraphics[width=0.95\textwidth]{airopa/Figures/m53-to-m53_both_matched_quivers.pdf}}\\
   \hspace{-1cm}
@@ -174,7 +163,7 @@ The averaged starlists from both PA's were also matched and transformed to the G
   \caption{\textit{Upper-left}: Quiver plot showing single-PSF astrometric residuals from the PA$=$0 $\rightarrow$ PA$=$90 transformation. \textit{Upper-right}: Same as upper-left, but for variable-PSF mode. \textit{lower-left}: Distribution of astrometric residuals from both PSF mode transformations. \textit{lower-right}: Correlation between astrometric residuals for both PSF modes.} \label{fig:m53_PA_compare}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!h]
   \centering
   \subfloat{\includegraphics[width=0.95\textwidth]{airopa/Figures/m53-to-gaia_both_matched_quivers.pdf}}\\
   \hspace{-1cm}
@@ -182,10 +171,12 @@ The averaged starlists from both PA's were also matched and transformed to the G
   \caption{\textit{Top row}: Quiver plots similar to those in Figure \ref{fig:m53_PA_compare}, but for stars matched and transformed to Gaia EDR3. The color bar is given in Gaia G-band magnitude. \textit{Bottom row}: Astrometric residuals distribution and correlation between the two PSF modes.} \label{fig:m53_PA_compare_gaia}
 \end{figure}
 
-%----------------FVU and Astrometry Results------------------------------------------------------------------------------------------------------------
+The M53 dataset includes six frames taken at a position angle of 0\degree (i.e. North up, East left), and six frames taken at a position angle of 90\degree (i.e. East up, South left). The PA $=0$ dataset consists of two frames taken at the central pointing, and four frames taken after a dither of $\Delta_x = -0.14", \Delta_y = 0.16"$. The PA $=90$ dataset consists of three frames taken at the central pointing, and three frames taken after a dither of $\Delta_x = +0.14", \Delta_y = -0.19"$. The total exposure time was 50 seconds per frame for both PAs. Figure \ref{fig:m53_image_grid} shows one frame taken at PA 0 and the accompanying grid of FWHM values from AIROPA variable-PSF mode, as well as a PA 90 frame and FWHM grid. The same TT guide star was used for both PAs, which has magnitude R ${\sim}$ 13.5 located 24" arcseconds to the Southwest.
+
+%----------------FVU------------------------------------------------------------------------------------------------------------
 
 \section{Fraction of Variance Unexplained} \label{sec:fvu}
-An important metric that we use (for all six datasets) to determine the ``quality of the fit" for each PSF-mode inside AIROPA is the fraction of variance unexplained (FVU). This metric is defined as the ratio between the variance of the residuals and the variance of the image itself, and is given by:
+An important metric that we use to determine the ``quality of the fit" for each PSF-mode inside AIROPA is the fraction of variance unexplained (FVU). This metric is defined as the ratio between the variance of the residuals and the variance of the image itself, and is given by:
 
 \begin{equation}
     FVU = \frac{\sigma^{2}_{\textrm{res}}}{\sigma^{2}_{\textrm{img}}}
@@ -196,7 +187,7 @@ where $\sigma^{2}_{\textrm{res}}$ is the variance of the residual, and $\sigma^{
 %----------------FVU and Astrometry Results------------------------------------------------------------------------------------------------------------
 
 \section{Results} \label{sec:fvu-astrom-results}
-Our analysis of six independent NIRC2 on-sky datasets show marginal or no improvement in astrometric residuals between the static PSF model and spatially variable PSF model within AIROPA. A comparison of the FVU metric between the two modes shows similar results. This implies that the ability of AIROPA to reconstruct the PSF for a wide range on-sky data remains limited by unaccounted for aberrations in the telescope. We also show that the effect of varying atmospheric conditions, number and spatial location of selected PSF reference stars, and telescope PA do not have a significant effect on the performance of AIROPA in either of the modes.
+Our analysis of six independent NIRC2 on-sky datasets show marginal or no improvement in astrometric residuals between the static PSF model and spatially variable PSF model within AIROPA. A comparison of the FVU metric between the two modes show similar results. This implies that the ability of AIROPA to reconstruct the PSF for a wide range on-sky data remains limited by unaccounted for aberrations in the telescope. We also show that the effect of varying atmospheric conditions, number and spatial location of selected PSF reference stars, and telescope PA do not have a significant effect on the performance of AIROPA in either of the modes.
 
 \begin{figure}[!h]
  \makebox[\textwidth][c]{
@@ -214,7 +205,11 @@ Our analysis of six independent NIRC2 on-sky datasets show marginal or no improv
  \caption{\footnotesize Same as Figure \ref{fig:ob-m53-astrom}, but for the GQ (top row), AQ (middle row), and PQ (bottom row) datasets.} \label{fig:gc-astrom}
 \end{figure}
 
-\indent For the M53 datasets, the astrometric precision is very similar between the two PSF modes for both PAs as can be seen in the bottom two rows of Figure \ref{fig:ob-m53-astrom}. The smallest measured FVUs are systematically worse (larger) in variable-PSF mode compared to single-PSF mode for the brightest M53 stars (yellow data, upper-right panels of Figure \ref{fig:fvu_grid}). The astrometric residuals after transforming the PA$=$0 star lists into the PA$=$90 reference frame have a dispersion of ${\sim}4$ mas, seen in the bottom-right panel of Figure \ref{fig:m53_PA_compare}. The distribution of astrometric residuals for all cross-matched stars between the two PAs is also quite similar (bottom-left panel of Figure \ref{fig:m53_PA_compare}). Matching the M53 stars from the NIRC2 frames to Gaia also show similar characteristics in terms of the astrometric residuals, albeit larger. Matching the two PAs to Gaia also introduces additional astrometric fitting errors as described in \cite{brown:2018a} and \cite{brown:2021a}. In particular the ``astrometric excess noise ($\epsilon$)" parameter is described simply as the excess uncertainty that must be added in quadrature to obtain a statistically acceptable astrometric solution. Further, the excess term $\epsilon$ is introduced in order to effectively reduce the statistical weight of observations that may be affected by things like instrument and attitude modeling errors. Of the ${\sim}$30 matched stars to Gaia, all of them have $\epsilon < $ XXX. More information on this error term is given in \cite{lindegren:2012a}. Finally, another aspect of this fitting, transforming, and matching scheme is that the PSF-fitting and source extraction are not strictly centroid-conserving. This effect might be particularly significant for off-axis stars that suffer from significant anisoplanatism, which is further complicated by a high-order transformation that is used for the PA$=$0 $\rightarrow$ PA$=$90 matching.
+\indent For the M53 datasets, AIROPA was run on all images at each PA using the same 10 PSF reference stars which are shown as data points colored by magnitude in the bottom panels of Figure \ref{fig:m53_image_grid}. Both the variable and single-PSF mode astrometric and photometric extractions were performed on each image. Additionally, stellar positions and magnitudes from the four central-pointing PA $=0$ frames were then averaged, and the averaged star list was transformed to the reference star list frame. We used the PA$=$90 star list as the reference list since the data is of higher quality than PA$=$0. The PA$=$0 dataset is measurably lower quality than the PA$=$90 dataset; $\overline{\textrm{SR}}_{0\degree} = 0.76^{*}\overline{\textrm{SR}}_{90\degree}$, $\overline{\textrm{FWHM}}_{0\degree}$ $= 1.14^{*}\overline{\textrm{FWHM}}_{90\degree}$. This likely effects the astrometric precision between the PA$=$0 $\rightarrow$ PA$=$90 transformation by $\sim$XX\%.
+
+The averaged starlists from both PA's were also matched and transformed to the Gaia EDR3 \citep{brown:2021a}. There were a total of 32 matched stars between both PA's and Gaia, which can be seen in Figure \ref{fig:m53_PA_compare_gaia}. The quiver plots in the top panels of Figure \ref{fig:m53_PA_compare_gaia} look nearly identical because the astrometric differences between the two PSF modes is significantly smaller than the astrometric difference between the AIROPA and Gaia positions. The faintest stars have the largest astrometric residuals, as expected.
+
+The astrometric precision is very similar between the two PSF modes for both PAs as can be seen in the bottom two rows of Figure \ref{fig:ob-m53-astrom}. The smallest measured FVUs are systematically worse (larger) in variable-PSF mode compared to single-PSF mode for the brightest M53 stars (yellow data, upper-right panels of Figure \ref{fig:fvu_grid}). The astrometric residuals after transforming the PA$=$0 star lists into the PA$=$90 reference frame have a dispersion of ${\sim}4$ mas, seen in the bottom-right panel of Figure \ref{fig:m53_PA_compare}. The distribution of astrometric residuals for all cross-matched stars between the two PAs is also quite similar (bottom-left panel of Figure \ref{fig:m53_PA_compare}). Matching the M53 stars from the NIRC2 frames to Gaia also show similar characteristics in terms of the astrometric residuals, albeit larger. Matching the two PAs to Gaia also introduces additional astrometric fitting errors as described in \cite{brown:2018a} and \cite{brown:2021a}. In particular the ``astrometric excess noise ($\epsilon$)" parameter is described simply as the excess uncertainty that must be added in quadrature to obtain a statistically acceptable astrometric solution. Further, the excess term $\epsilon$ is introduced in order to effectively reduce the statistical weight of observations that may be affected by things like instrument and attitude modeling errors. Of the ${\sim}$30 matched stars to Gaia, all of them have $\epsilon < $ XXX. More information on this error term is given in \cite{lindegren:2012a}. Finally, another aspect of this fitting, transforming, and matching scheme is that the PSF-fitting and source extraction are not strictly centroid-conserving. This effect might be particularly significant for off-axis stars that suffer from significant anisoplanatism, which is further complicated by a high-order transformation that is used for the PA$=$0 $\rightarrow$ PA$=$90 matching.
 
 \indent For the much more crowded GC datasets, the average astrometric precision for the PQ stars with $m_{K} \leq 13$ is $r_{\sigma}{\sim}1.0$ mas for both single and variable-PSF modes. The average FVU metric is marginally better (smaller) for the variable-PSF ($11.7\times10^{-3}$) than for the single-PSF ($12.4\times10^{-3}$), again most importantly for the bright sources in the frames. This improvement is much less than what has been measured on simulation tests in \cite{Turri:inprep}. Further, the results are much the same for both the AQ and GQ datasets. There is a marginal improvement in the average FVU for the GQ bright stars $m_{K} \leq 13$ with variable-PSF mode. The average FVU for the GQ variable-PSF mode is $5.34\times10^{-3}$, compared to the single-PSF mode average value of $5.58\times10^{-3}$. The FVU comparisons for all of the datasets and PSF modes are given in Figure \ref{fig:fvu_grid}.
 
