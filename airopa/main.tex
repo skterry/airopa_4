@@ -200,22 +200,38 @@ An important metric that we use to determine the ``quality of the fit" for each 
 \section{Results} \label{sec:fvu-astrom-results}
 Our analysis of six independent NIRC2 on-sky datasets show marginal or no improvement in astrometric residuals between the static PSF model and spatially variable PSF model within AIROPA. A comparison of the FVU metric between the two modes show similar results. This implies that the ability of AIROPA to reconstruct the PSF for a wide range on-sky data remains limited by unaccounted for aberrations in the telescope. We also show that the effect of varying atmospheric conditions, number and spatial location of selected PSF reference stars, and telescope PA do not have a significant effect on the performance of AIROPA in either of the modes.
 
+%\begin{figure}[!h]
+ %\makebox[\textwidth][c]{
+ %\includegraphics[width=1.1\textwidth]{Figures/ob-m53-astrometry-fvu.pdf}
+ %}
+ %\caption{\footnotesize Astrometric errors and correlations between single-PSF and variable-PSF modes for the datasets; OB150029 (\textit{left column}), M53 PA$=$0 (\textit{middle column}), and M53 PA$=$90 (\textit{right column}).} \label{fig:ob-m53-astrom}
+%\end{figure}
+
 \begin{figure}[!h]
- \makebox[\textwidth][c]{
- \includegraphics[width=1.1\textwidth]{Figures/ob-m53-astrometry-fvu.pdf}
- }
- \caption{\footnotesize Astrometric errors and correlations between single-PSF and variable-PSF modes for the datasets; OB150029 (\textit{left column}), M53 PA$=$0 (\textit{middle column}), and M53 PA$=$90 (\textit{right column}).} \label{fig:ob-m53-astrom}
+  \hspace{-1.5cm}
+  \subfloat{\includegraphics[width=0.38\textwidth]{Figures/OB150029_astrom-fvu.pdf}}
+  \subfloat{\includegraphics[width=0.38\textwidth]{Figures/m53pa0_astrom-fvu.pdf}}
+   \subfloat{\includegraphics[width=0.38\textwidth]{Figures/m53pa90_astrom-fvu.pdf}}
+  \caption{\footnotesize Astrometric errors and correlations between single-PSF and variable-PSF modes for the datasets; OB150029 (\textit{left column}), M53 PA$=$0 (\textit{middle column}), and M53 PA$=$90 (\textit{right column}).} \label{fig:m53_PA_compare_gaia}
 \end{figure}
 
 \indent For the microlensing target, OB150029, there is a marginal improvement of ${\sim}2\%$ in the astrometric precision in variable-PSF mode ($\sigma_{r}=0.226$ mas) over single-PSF mode ($\sigma_{r}=0.231$ mas). The upper-left panel of Figure \ref{fig:ob-m53-astrom} shows the astrometric residuals for all stars detected in both PSF modes, OB150029 is given as the red filled circle. Interestingly, the FVU metric for the target is worse (larger) with the variable-PSF ($3.90\times10^{-3}$) compared to the single-PSF ($2.14\times10^{-3}$)(lower-left panel of Figure \ref{fig:ob-m53-astrom}). 
 %This is a ${\sim}43\%$ decrease in FVU for the single-PSF mode. A possible explanation for this is that target is the brightest star in the field and is used as a PSF reference star itself for the single mode to build the PSF model. Although the PSF reference stars are de-convolved and normalized to the same scale during the building of the PSF model inside AIROPA, there may still be some influence on the fitting and subtraction, particularly in the wings of the PSF. The case is clearly different for the spatially variable PSF model given the phase map and atmospheric profile information that is utilized in this mode.
 The majority of the increased FVU comes from an over-subtracted region to the Northwest of the PSF core (right panel of Figure \ref{fig:ob150029-targ-res}).
 
+%\begin{figure}[!h]
+ %\makebox[\textwidth][c]{
+ %\includegraphics[width=1.1\textwidth]{Figures/gc-astrometry-fvu.pdf}
+ %}
+ %\caption{\footnotesize Same as Figure \ref{fig:ob-m53-astrom}, but for the GQ (\textit{left column}), AQ (\textit{middle column}), and PQ (\textit{right column}) datasets.} \label{fig:gc-astrom}
+%\end{figure}
+
 \begin{figure}[!h]
- \makebox[\textwidth][c]{
- \includegraphics[width=1.1\textwidth]{Figures/gc-astrometry-fvu.pdf}
- }
- \caption{\footnotesize Same as Figure \ref{fig:ob-m53-astrom}, but for the GQ (\textit{left column}), AQ (\textit{middle column}), and PQ (\textit{right column}) datasets.} \label{fig:gc-astrom}
+  \hspace{-1.5cm}
+  \subfloat{\includegraphics[width=0.38\textwidth]{Figures/GQ_astrom-fvu.pdf}}
+  \subfloat{\includegraphics[width=0.38\textwidth]{Figures/AQ_astrom-fvu.pdf}}
+   \subfloat{\includegraphics[width=0.38\textwidth]{Figures/PQ_astrom-fvu.pdf}}
+  \caption{\footnotesize Same as Figure \ref{fig:ob-m53-astrom}, but for the GQ (\textit{left column}), AQ (\textit{middle column}), and PQ (\textit{right column}) datasets.} \label{fig:m53_PA_compare_gaia}
 \end{figure}
 
 %This likely effects the astrometric precision between the PA$=$0 $\rightarrow$ PA$=$90 transformation by $\sim$XX\%. 
