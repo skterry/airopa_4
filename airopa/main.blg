@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: spiebib.bst
+Database file #1: refs.bib
+Warning--empty title in Turri:inprep
+Warning--empty volume in Turri:inprep
+Warning--empty title in Ciurlo:inprep
+Warning--empty volume in Ciurlo:inprep
+Warning--empty title in lu:inprep
+Warning--empty title in lu:inprep
+Warning--empty volume in lu:inprep
+You've used 19 entries,
+            1993 wiz_defined-function locations,
+            618 strings with 7991 characters,
+and the built_in function-call counts, 5707 in all, are:
+= -- 434
+> -- 424
+< -- 0
++ -- 149
+- -- 130
+* -- 548
+:= -- 853
+add.period$ -- 19
+call.type$ -- 19
+change.case$ -- 18
+chr.to.int$ -- 0
+cite$ -- 26
+duplicate$ -- 266
+empty$ -- 417
+format.name$ -- 130
+if$ -- 1319
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 19
+newline$ -- 60
+num.names$ -- 19
+pop$ -- 46
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 215
+stack$ -- 0
+substring$ -- 178
+swap$ -- 162
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 7
+while$ -- 39
+width$ -- 21
+write$ -- 169
+(There were 7 warnings)
