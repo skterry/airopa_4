@@ -42,7 +42,7 @@
 \maketitle
 
 \begin{abstract}
-We present an analysis of six independent on-sky datasets taken with the Keck-II/NIRC2 instrument. Using the off-axis PSF-reconstruction software AIROPA, we extract stellar astrometry, photometry, and other fitting metrics in order to characterize the performance of this package. We test the effectiveness of AIROPA to reconstruct the point spread function (PSF) across the field of view in varying atmospheric conditions, number and location of PSF reference stars, and telescope position angle (PA). We compare the astrometric precision and fitting residuals between a static PSF model and a spatially varying PSF model that incorporates instrumental aberrations and atmospheric turbulence during exposures. We find mostly consistent astrometric and photometric performance across all of the individual datasets, with a ${\sim}20$\% lower astrometric uncertainty for variable-PSF mode over single-PSF mode in the best case. Ultimately, we confirm the result of \cite{Turri:inprep}, which find that the spatially variable PSF does not significantly improve the astrometric and/or PSF fitting residuals over the static PSF for on-sky observations. We attribute this to unaccounted instrumental aberrations that are not characterized through afternoon adaptive optics (AO) bench calibrations.
+We present an analysis of six independent on-sky datasets taken with the Keck-II/NIRC2 instrument. Using the off-axis PSF-reconstruction software AIROPA, we extract stellar astrometry, photometry, and other fitting metrics in order to characterize the performance of this package. We test the effectiveness of AIROPA to reconstruct the point spread function (PSF) across the field of view in varying atmospheric conditions, number and location of PSF reference stars, and telescope position angle (PA). We compare the astrometric precision and fitting residuals between a static PSF model and a spatially varying PSF model that incorporates instrumental aberrations and atmospheric turbulence during exposures. We find mostly consistent astrometric performance and goodness-of-fit values across all of the individual datasets, with a ${\sim}15$\% smaller astrometric uncertainty for variable-PSF mode over single-PSF mode in the best case. Ultimately, we confirm the result of \cite{Turri:inprep}, which find that the spatially variable PSF does not significantly improve the astrometric and/or PSF fitting residuals over the static PSF for on-sky observations. We attribute this to unaccounted instrumental aberrations that are not characterized through afternoon adaptive optics (AO) bench calibrations.
 \end{abstract}
 
 % Include a list of keywords after the abstract 
@@ -112,13 +112,6 @@ The GQ dataset was taken on 2017-08-11, The AQ data were taken $\sim$two weeks a
 
 %Regarding FVU on bright/faint stars.
 
-%\begin{figure}
-% \makebox[\textwidth][c]{
-% \includegraphics[width=1.0\textwidth]{Figures/SV_astrometry_quad.pdf}
-% }
-% \caption{\footnotesize \textit{Top-left}: Averaged positional difference in X and Y between single and variable-PSF modes for the AQ dataset. Yellow data corresponds to K $<$ 13 stars, blue data shows all stars detected. \textit{Top-right}: Quiver plot showing the astrometric differences. \textit{Lower-left}: Astrometric difference as a function distance from the central pointing in X directions. \textit{Lower-right}: Same as lower-left, but for Y directions. The solid black line shows a third-order polynomial fit to all data points, with a shaded region representing 1$\sigma$ spread about the mean. \label{fig:gc_astrom}}
-%\end{figure}
-
 %----------------AIROPA ON OB150029------------------------------------------------------------------------------------------------------------
  
 \subsection{OGLE-2015-BLG-0029: A Less Crowded Microlensing Field} \label{sec:ogle-data}
@@ -169,7 +162,7 @@ Importantly, the NIRC2 observations were taken at two different position angles 
   \subfloat{\includegraphics[width=0.95\textwidth]{Figures/m53-to-gaia_both_matched_quivers.pdf}}\\
   \hspace{-1cm}
   \subfloat{\includegraphics[width=0.95\textwidth]{Figures/m53-to-gaia_histAndCorrelation.pdf}}
-  \caption{\textit{Top row}: Quiver plots similar to those in Figure \ref{fig:m53_PA_compare}, but for stars matched and transformed to Gaia EDR3. The color bar is given in Gaia G magnitude. \textit{Bottom row}: Astrometric residuals distribution and correlation between the two PSF modes.} \label{fig:m53_PA_compare_gaia}
+  \caption{Same as Figure \ref{fig:m53_PA_compare}, but for stars matched and transformed to Gaia EDR3. The color bar is given in Gaia G magnitude.} \label{fig:m53_PA_compare_gaia}
 \end{figure}
 
 \begin{figure}[!h]
@@ -193,45 +186,48 @@ An important metric that we use to determine the ``quality of the fit" for each 
     FVU = \frac{\sigma^{2}_{\textrm{res}}}{\sigma^{2}_{\textrm{img}}}
 \end{equation}
 
-\noindent where $\sigma^{2}_{\textrm{res}}$ is the variance of the residual, and $\sigma^{2}_{\textrm{img}}$ is the variance of the image. According to \cite{Turri:inprep}, the FVU is only a reliable metric for brighter stars because they are minimally affected by noise, with the largest error contribution coming from systematics on the PSF. The lower panels of Figures \ref{fig:ob-m53-astrom} and \ref{fig:gc-astrom} show the single/variable FVU comparison for all six datasets, with further details given in section \ref{sec:fvu-astrom-results}. %This discrepancy was also discovered in \cite{Turri:inprep}, where they showed significant improvement to the FVU in simulated data, but effectively no improvement in on-sky comparisons. This implies that there are additional aberrations in the AO system that are not accounted for when moving from fiber source calibrations to on-sky science data.
+\noindent where $\sigma^{2}_{\textrm{res}}$ is the variance of the residual, and $\sigma^{2}_{\textrm{img}}$ is the variance of the image. According to \cite{Turri:inprep}, the FVU is only a reliable metric for brighter stars because they are minimally affected by noise, with the largest error contribution coming from systematics on the PSF. The lower panels of Figures \ref{fig:ob-m53-astrom} and \ref{fig:gc-astrom} show the single/variable FVU comparison for all six datasets, with further details given in section \ref{sec:fvu-astrom-results}. 
+%This discrepancy was also discovered in \cite{Turri:inprep}, where they showed significant improvement to the FVU in simulated data, but effectively no improvement in on-sky comparisons. This implies that there are additional aberrations in the AO system that are not accounted for when moving from fiber source calibrations to on-sky science data.
 
 %----------------Results------------------------------------------------------------------------------------------------------------
 
 \section{Results} \label{sec:fvu-astrom-results}
 Our analysis of six independent NIRC2 on-sky datasets show marginal or no improvement in astrometric residuals between the static PSF model and spatially variable PSF model within AIROPA. A comparison of the FVU metric between the two modes show similar results. This implies that the ability of AIROPA to reconstruct the PSF for a wide range on-sky data remains limited by unaccounted for aberrations in the telescope. We also show that the effect of varying atmospheric conditions, number and spatial location of selected PSF reference stars, and telescope PA do not have a significant effect on the performance of AIROPA in either of the modes.
 
-%\begin{figure}[!h]
- %\makebox[\textwidth][c]{
- %\includegraphics[width=1.1\textwidth]{Figures/ob-m53-astrometry-fvu.pdf}
- %}
- %\caption{\footnotesize Astrometric errors and correlations between single-PSF and variable-PSF modes for the datasets; OB150029 (\textit{left column}), M53 PA$=$0 (\textit{middle column}), and M53 PA$=$90 (\textit{right column}).} \label{fig:ob-m53-astrom}
-%\end{figure}
-
 \begin{figure}[!h]
   \hspace{-1.5cm}
   \subfloat{\includegraphics[width=0.38\textwidth]{Figures/OB150029_astrom-fvu.pdf}}
   \subfloat{\includegraphics[width=0.38\textwidth]{Figures/m53pa0_astrom-fvu.pdf}}
    \subfloat{\includegraphics[width=0.38\textwidth]{Figures/m53pa90_astrom-fvu.pdf}}
-  \caption{\footnotesize Astrometric errors and correlations between single-PSF and variable-PSF modes for the datasets; OB150029 (\textit{left column}), M53 PA$=$0 (\textit{middle column}), and M53 PA$=$90 (\textit{right column}).} \label{fig:m53_PA_compare_gaia}
+  \caption{\footnotesize Difference of astrometric errors and FVU values for the datasets; OB150029 (\textit{left column}), M53 PA$=$0 (\textit{middle column}), and M53 PA$=$90 (\textit{right column}). Values larger than zero indicate better fitting and subtraction through variable-PSF mode.} \label{fig:ob-m53-astrom}
+\end{figure}
+
+\begin{figure}[!h]
+  \hspace{-1.5cm}
+  \subfloat{\includegraphics[width=0.38\textwidth]{Figures/OB150029_fvuAstrom-ratio.pdf}}
+  \subfloat{\includegraphics[width=0.38\textwidth]{Figures/m53pa0_fvuAstrom-ratio.pdf}}
+   \subfloat{\includegraphics[width=0.38\textwidth]{Figures/m53pa90_fvuAstrom-ratio.pdf}}
+  \caption{\footnotesize Ratio of astrometric errors and FVU values for the datasets; OB150029 (\textit{left column}), M53 PA$=$0 (\textit{middle column}), and M53 PA$=$90 (\textit{right column}). Values larger than one indicate better fitting and subtraction through variable-PSF mode.} \label{fig:ob-m53-astromfvu-ratios}
 \end{figure}
 
 \indent For the microlensing target, OB150029, there is a marginal improvement of ${\sim}2\%$ in the astrometric precision in variable-PSF mode ($\sigma_{r}=0.226$ mas) over single-PSF mode ($\sigma_{r}=0.231$ mas). The upper-left panel of Figure \ref{fig:ob-m53-astrom} shows the astrometric residuals for all stars detected in both PSF modes, OB150029 is given as the red filled circle. Interestingly, the FVU metric for the target is worse (larger) with the variable-PSF ($3.90\times10^{-3}$) compared to the single-PSF ($2.14\times10^{-3}$)(lower-left panel of Figure \ref{fig:ob-m53-astrom}). 
 %This is a ${\sim}43\%$ decrease in FVU for the single-PSF mode. A possible explanation for this is that target is the brightest star in the field and is used as a PSF reference star itself for the single mode to build the PSF model. Although the PSF reference stars are de-convolved and normalized to the same scale during the building of the PSF model inside AIROPA, there may still be some influence on the fitting and subtraction, particularly in the wings of the PSF. The case is clearly different for the spatially variable PSF model given the phase map and atmospheric profile information that is utilized in this mode.
 The majority of the increased FVU comes from an over-subtracted region to the Northwest of the PSF core (right panel of Figure \ref{fig:ob150029-targ-res}).
 
-%\begin{figure}[!h]
- %\makebox[\textwidth][c]{
- %\includegraphics[width=1.1\textwidth]{Figures/gc-astrometry-fvu.pdf}
- %}
- %\caption{\footnotesize Same as Figure \ref{fig:ob-m53-astrom}, but for the GQ (\textit{left column}), AQ (\textit{middle column}), and PQ (\textit{right column}) datasets.} \label{fig:gc-astrom}
-%\end{figure}
-
 \begin{figure}[!h]
   \hspace{-1.5cm}
   \subfloat{\includegraphics[width=0.38\textwidth]{Figures/GQ_astrom-fvu.pdf}}
   \subfloat{\includegraphics[width=0.38\textwidth]{Figures/AQ_astrom-fvu.pdf}}
    \subfloat{\includegraphics[width=0.38\textwidth]{Figures/PQ_astrom-fvu.pdf}}
-  \caption{\footnotesize Same as Figure \ref{fig:ob-m53-astrom}, but for the GQ (\textit{left column}), AQ (\textit{middle column}), and PQ (\textit{right column}) datasets.} \label{fig:m53_PA_compare_gaia}
+  \caption{\footnotesize Same as Figure \ref{fig:ob-m53-astrom}, but for the GQ (\textit{left column}), AQ (\textit{middle column}), and PQ (\textit{right column}) datasets.} \label{fig:gc-astrom}
+\end{figure}
+
+\begin{figure}[!h]
+  \hspace{-1.5cm}
+  \subfloat{\includegraphics[width=0.38\textwidth]{Figures/GQ_fvuAstrom-ratio.pdf}}
+  \subfloat{\includegraphics[width=0.38\textwidth]{Figures/AQ_fvuAstrom-ratio.pdf}}
+   \subfloat{\includegraphics[width=0.38\textwidth]{Figures/PQ_fvuAstrom-ratio.pdf}}
+  \caption{\footnotesize Same as Figure \ref{fig:ob-m53-astrom}, but for the GQ (\textit{left column}), AQ (\textit{middle column}), and PQ (\textit{right column}) datasets.} \label{fig:gc-astrom}
 \end{figure}
 
 %This likely effects the astrometric precision between the PA$=$0 $\rightarrow$ PA$=$90 transformation by $\sim$XX\%. 
@@ -239,26 +235,19 @@ For the M53 datasets, the astrometric precision is very similar between the two 
 
 The averaged starlists from both PA's were also matched and transformed to Gaia EDR3 \citep{brown:2021a}. There were a total of 32 matched stars between both PA's and Gaia, which can be seen in Figure \ref{fig:m53_PA_compare_gaia}. The quiver plots in the top panels of Figure \ref{fig:m53_PA_compare_gaia} look nearly identical because the astrometric differences between the two PSF modes is significantly smaller than the astrometric difference between the AIROPA and Gaia positions. The distribution of astrometric residuals for both PA's peaks at $\sigma_{r}\leq5$ mas, and the faintest stars have the largest residuals, as expected. The NIRC2 to Gaia matching show similar results to the PA$=$0 $\rightarrow$ PA$=$90 matching in terms of the astrometric residuals, albeit the Gaia residuals are larger as expected when transforming across different coordinate systems. Additional considerations need to be made when matching the two PA's to Gaia (i.e. astrometric fitting errors described in \cite{brown:2018a} and \cite{brown:2021a}). In particular the ``astrometric excess noise ($\epsilon$)" parameter is described simply as the excess uncertainty that must be added in quadrature to obtain a statistically acceptable astrometric solution. Further, the excess term $\epsilon$ is introduced in order to effectively reduce the statistical weight of observations that may be affected by things like instrument and attitude modeling errors. Of the ${\sim}$30 matched stars to Gaia, nearly all have $\epsilon < $ XXX, which we deem reliable/unreliable. More information on this error term is given in \cite{lindegren:2012a}. A final detail of this scheme is that the PSF-fitting and source extraction are not strictly centroid-conserving. This effect is particularly significant for off-axis stars that suffer from significant anisoplanatism.
 
-Finally, the M53 starlists were transformed and matched to the HST reference frame using archival HST ACS data (as in \cite{service:2016a}). Figure \ref{fig:m53_PA_compare_hst} shows the astrometric residual quiver plots in the upper panels, and corresponding distribution of residuals. The astrometric residuals are much larger for the transformation to HST, and I'm not sure why.... I performed the transformation/matching similarly to the Gaia procedure. I also confirmed that the \textit{`order = 1'} flag performs only a simple rotation and translation. The Gaia output gives astrometric residuals in arcseconds (i.e. divide by 1000 for milliarcsecond), while the HST output gives astrometric residuals in pixels (i.e. multiple by 40 for milliarcsecond). Need to look at this result again I suppose.
+Finally, the M53 starlists were transformed and matched to the HST reference frame using archival HST ACS data (as in \cite{service:2016a}). Figure \ref{fig:m53_PA_compare_hst} shows the astrometric residual quiver plots in the upper panels, and corresponding distribution of residuals. The astrometric residuals are much larger for the transformation to HST, and I'm not sure why.... I performed the transformation/matching similarly to the Gaia procedure. I also confirmed that the \textit{`order = 1'} flag in flystar.align() performs only a simple rotation and/or linear transformation. The Gaia output gives astrometric residuals in arcseconds (i.e. divide by 1000 for milliarcsecond), while the HST output gives astrometric residuals in pixels (i.e. multiple by 40 for milliarcsecond). Need to look at this result again I suppose.
 
 %Significantly less stars were matched compared to the original study because, for the type of analysis presented in this work, we are limited to four un-dithered frames at PA$=0$ and three un-dithered frames at PA$=90$. While furthering the analysis of \cite{service:2016a} by implementing a variable-PSF-based distortion solution for both Keck-II/NIRC2 and Keck-I/OSIRIS would benefit from the current work, deriving this type of new distortion solution in the current work is beyond scope.
 
 \indent For the much more crowded GC datasets, the average astrometric precision for the PQ stars with $m_{K} \leq 13$ is $\sigma_{{r}}{\sim}1.0$ mas for both single and variable-PSF modes. The average FVU metric is marginally better (smaller) for the variable-PSF ($11.7\times10^{-3}$) than for the single-PSF ($12.4\times10^{-3}$) for the bright sources in the frames. This improvement is much less than what has been measured on simulation tests in \cite{Turri:inprep}. Further, the results are much the same for both the AQ and GQ datasets. There is a marginal improvement in the average FVU for the GQ bright stars $m_{K} \leq 13$ with variable-PSF mode. The average FVU for the GQ variable-PSF mode is $5.34\times10^{-3}$, compared to the single-PSF mode average value of $5.58\times10^{-3}$. The differences in astrometric error and FVU for all of the GC datasets are given in Figure \ref{fig:gc-astrom}.
 
-%\begin{figure}[!h]
- %\makebox[\textwidth][c]{
- %\includegraphics[width=1.0\textwidth]{Figures/fvu_grid.pdf}
- %}
- %\caption{\footnotesize \textit{Left Column}: M53 NIRC2 frame taken at PA = 0, with accompanying variable-PSF mode FWHM grid generated by AIROPA. \textit{Right Column}: Same as left, but for PA = 90.} \label{fig:fvu_grid}
-%\end{figure}
-
 %----------------Discussion and Conclusions------------------------------------------------------------------------------------------------------------
-
+\clearpage
 \section{Discussion and Conclusion} \label{sec:conclusion}
 
 \indent We have analyzed several on-sky NIRC2 datasets with the the single PSF mode and spatially variable PSF mode in AIROPA. We find that the performance of AIROPA is reliable across different conditions including poor, average, and good quality seeing, crowded and/or sparse stellar fields, varying numbers and brightnesses of PSF reference stars, and in different telescope PA's.
 \\
-\indent Comparing the FVU metrics between PSF fitting modes across all datasets shows at best a ${\sim}5\%$ improvement in bright stars for the spatially varying PSF model over a static PSF model. This is significantly less than what has been shown in similar tests on simulated GC data \citep{Turri:inprep}. The biggest improvement in astrometric precision comes from the analysis of microlensing target OB150029. We measure an astrometric precision that is ${\sim}20\%$ smaller for the variable-PSF mode over the single-PSF mode. It is curious, however, that the FVU metric for this target does not follow this same improvement seen in the astrometry. For the M53 data, we find that the astrometric residuals are very similar when transforming a stack of PA $=$ 0 frames onto the PA $=$ 90 reference frame. When transforming the two PA's to the Gaia and HST reference, we find very similar results. This is because the astrometric differences between single-PSF and variable-PSF modes are much smaller than the residuals when matching either PSF modes astrometry to the absolute Gaia and/or HST astrometry.
+\indent Comparing the FVU metrics between PSF fitting modes across all datasets shows at best a ${\sim}5\%$ improvement in bright stars for the spatially varying PSF model over a static PSF model. This is significantly less than what has been shown in similar tests on simulated GC data \citep{Turri:inprep}. For OB150029 we measure an astrometric precision that is ${\sim}5\%$ smaller for the variable-PSF mode over the single-PSF mode. It is curious, however, that the FVU metric for this target does not follow the same improvement seen in the astrometry. For the M53 data, we find that the astrometric residuals between single and variable-PSF modes are quite similar when transforming a stack of PA $=$ 0 frames onto the PA $=$ 90 reference frame. Further, when transforming the two PA's to the Gaia and HST reference, we also find very similar astrometric results. The astrometric residuals for both PSF modes are nearly identical because the astrometric differences between single-PSF and variable-PSF modes are much smaller than the residuals when matching either PSF modes astrometry to the absolute Gaia and HST reference frames.
 \\
 \indent We largely confirm the result of \cite{Turri:inprep} which shows no significant improvement in fitting residuals for the spatially variable PSF mode in AIROPA with on-sky data. It is hypothesized that there remains static or quasi-static instrumental aberrations that persist in the telescope and are not being fully characterized by afternoon phase diversity measurements. Future on-sky phase diversity measurements should help in identifying the source(s) of instrumental aberrations that are not currently accounted for in fiber phase diversity measurements. 
 
@@ -271,47 +260,8 @@ We are most fortunate to have the opportunity to conduct observations from this 
 \\
 \indent SKT acknowledges support from the NSF through grant AST-1836016. We acknowledge support from the W. M. Keck Foundation, the Heising-Simons Foundation, the Gordon and Betty Moore Foundation, and the NSF (AST-1412615, AST-1518273). We thank the staff of Keck Observatory for their help with obtaining calibration data and overall support for our program.
 
-%\begin{figure*}
-%\includegraphics[width=\textwidth]{Figures/metrics_dimmmass.pdf}
-%\caption{\footnotesize \textit{Left}: Strehl ratio and FWHM median and standard deviation for all datasets analyzed in this work. \textit{Right}: 0.5$\mu m$ DIMM/MASS seeing profiles for each dataset, respectively. Grey shaded region represents time of observation for each set. Six cleaned frames were analyzed for the GC and OB150029, and eight frames were analyzed for M53 (both PA's).} \label{fig:strehl_fwhm_dimmmass}
-%\end{figure*}
-
-\clearpage
 % References
 \bibliography{refs} % bibliography data in report.bib
 \bibliographystyle{spiebib} % makes bibtex use spiebib.bst
-
-%Exclude Appendix
-%\appendix
-%----------------PSF Clipping------------------------------------------------------------------------------------------------------------
-%\section{PSF Clipping} \label{appendix:A}
-%We have found that the PSF clipping process in AIROPA varies sensitively with the combined (instrumental + atmospheric) OTF, which for the latter is constructed using the closest available DIMM/MASS data to the observation. This is somewhat expected as the atmospheric contribution to the OTF relies on an accurate accounting of the total integrated $C_n^2$ profile across six turbulence layers in the atmosphere (0.5km, 1km, 2km, 4km, 8km, and 16km altitudes). The theoretical estimation of the total isoplanatic seeing is given as:
-
-%\begin{equation}
-%    \sigma_{\textrm{iso}} = 
-%\end{equation}
-
-%\noindent where ...
-
-%We compared the atmospheric profiles for two different ``poor quality" datasets (hereafter PQ1 and PQ2). Each of the six PQ1 frames analyzed with AIROPA shows varying levels of PSF clipping near the core of the reconstructed PSF. Although the six frames from PQ2 are of similar Strehl Ratio and FWHM as PQ1, they do not show any signs of excessive PSF clipping from the algorithm.
-
-%----------------PSF Smoothing------------------------------------------------------------------------------------------------------------
-%\section{PSF Smoothing} \label{appendix:B}
-%AIROPA has the capability to smooth the halo of the PSF. This function is useful to smooth out any background noise contribution that remains in the final PSF model. In order to validate the efficiency of this algorithm, we test the PSF smoothing function on one frame from the PQ dataset and one frame from an unrelated low-quality GC dataset that shows persistent background noise in the PSF halo. 
-
-%Specifically, the PSF smoothing algorithm applies a variable box size median smoothing technique to the halo of the modeled PSF, where the radius that the smoothing function begins is user-defined. The smoothing calculation itself can be expressed as:
-
-%\begin{equation}
-%    \Phi_{i,j} = \sum_{i,j}(\mathrm{AW}_{i,j} + \mathrm{RW}_{i,j})
-%\end{equation}
-
-%where $\Phi_{i,j}$ is the two-dimensional smoothed PSF model, AW and RW are the azimuthal and radial width's for filtering. 
-
-%\begin{figure}[!h]
-% \makebox[\textwidth][c]{
-% \includegraphics[width=0.8\textwidth]{Figures/fvu_smoothing.pdf}
-% }
- %\caption{\footnotesize \textit{Top panel}: The extracted on-axis PSF from AIROPA variable-PSF mode showing the non-halo-smoothed PSF (left) and halo-smoothed PSF (right). \textit{Bottom panel}: The FVU ratio between smoothed and non-smoothed halo. Halo smoothing leads to better FVU values for fainter sources, and worse FVU values for bright sources. The solid black line shows a third-order polynomial fit, with blue shaded region representing 1$\sigma$ spread about the mean-fit.} \label{fig:fvu-smoothing}
-%\end{figure}
 
 \end{document} 
