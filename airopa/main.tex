@@ -187,9 +187,9 @@ We present the AIROPA single-PSF and variable-PSF results for each field analyze
 \label{tab:PhotAstromDiff-results}
 \end{table}
 
-\indent In addition to the three primary metrics mentioned above, we also compare the M53 astrometry and photometry from each PSF mode to several external catalogues. We make these comparisons in an attempt to determine which PSF mode gives results that are more consistent with an external reference. As \cite{Turri:inprep} show, there is a clear ``relative" difference in astrometry and photometry between the two PSF modes in AIROPA, however this information alone does not tell us which PSF mode gives a more ``true" result. Performing a comparison like the one described in the subsequent M53 results sections should give evidence of the ``absolute" difference between the two PSF modes and the ``true" result.
+\indent In addition to the three primary metrics mentioned above, we also compare the M53 astrometry and photometry from each PSF mode to several external catalogues. We make these comparisons in an attempt to determine which PSF mode gives results that are more consistent with an external reference. As \cite{Turri:inprep} show, there is a clear ``relative" difference in astrometry and photometry between the two PSF modes in AIROPA. However this information alone does not tell us which PSF mode gives a more ``true" result. Performing comparisons like those described in the subsequent M53 results sections should give evidence of which PSF mode produces results that are closest to truth.
 \\
-\indent Table \ref{tab:PhotAstromFVU-results} gives the photometry, astrometry, and FVU results for all datasets analyzed in this work. The table includes results for all detected stars in each set, as well as results for the brightest stars (i.e. $m_K < 13$), as the PSF residuals at the brightest magnitudes are primarily affected by PSF systematic errors rather than noise \cite{Turri:inprep}.
+\indent The various astrometry, photometry, FVU, and source color results are presented in several Tables throughout the Results section. Table \ref{tab:PhotAstromFVU-results} gives the average photometric and astrometric errors, and average FVU results for all datasets analyzed in this work. The table includes results for all detected stars in each set, as well as results for the brightest stars ($m_K < 13$), as the PSF residuals at the brightest magnitudes are affected primarily by PSF systematic errors rather than noise \cite{Turri:inprep}. Table \ref{tab:PhotAstromDiff-results} reports the difference in measured magnitudes and source positions in the two PSF modes. The stars and subsequent measurements are grouped into two radii; $r \leq 3$\textquotesingle\textquotesingle, where the anisoplanatic effect on the PSFs should have a smaller impact, and $r > 3$\textquotesingle\textquotesingle, where anisoplanatism significantly affects the shape of PSFs. Ideally, a spatially varying reconstructed PSF (i.e. AIROPA Variable-PSF mode) properly accounts for the anisoplanatic effect by shaping the modeled PSF according to the instrumental and atmospheric components of the OTF at the larger off-axis locations.
 
 \begin{figure}[!h]
   %\hspace{-1.04cm}
@@ -290,9 +290,11 @@ As described in Section \ref{sec:m53-data}, the two M53 datasets have significan
 \end{figure}
 
 \subsubsection{M53 PA 0} \label{sec:result-m53-pa0}
-A total of 72 stars were cross-matched across all PA 0 frames, with 10 of the stars used to build the initial PSF model. The location and brightness of the selected PSF reference stars are given by the colored data points in the bottom panels of Figure \ref{fig:m53_image_grid}.
+A total of 72 stars were cross-matched across all PA 0 frames, with 10 of the stars used to build the initial PSF model. The location and brightness of the selected PSF reference stars are given by the colored data points in the bottom panels of Figure \ref{fig:m53_image_grid}. The difference in astrometry, photometry, and FVU between Single-PSF and Variable-PSF modes follow the same trends seen in the GC and OB150029 analyses (Tables \ref{tab:PhotAstromFVU-results} and \ref{tab:PhotAstromDiff-results}). The most significant difference for the M53 PA 0 Single and Variable PSF modes comes from the comparison of the photometric uncertainties (middle panel of Figure \ref{fig:ob-m53-astromfvu-ratios}). The results imply that the Variable-PSF mode gives significantly lower photometric errors than the Single-PSF mode, particularly for the brighter stars in the field (see Table \ref{tab:PhotAstromFVU-results} columns 3$-$4 for M53 PA 0).
 
 \subsubsection{M53 PA 90} \label{sec:result-m53-pa90}
+The higher quality PA 90 data have a total of 160 stars cross-matched in all images, with the same 10 stars used as PSF reference stars. Again there is no marked improvement in any of the fitting metrics we examined for this data set. The difference in stellar positions and magnitudes also follow similar trends seen in the previous data (Table \ref{tab:PhotAstromDiff-results}).
+
 
 \subsubsection{HST Cross Reference} \label{sec:m53-hst}
 
@@ -340,8 +342,8 @@ A total of 72 stars were cross-matched across all PA 0 frames, with 10 of the st
 \begin{tabular}{lccccc}
 \hline
         Field &  Date [UT] &  Strehl Ratio &  FWHM [mas] &  RMS WFE [nm] & Exp. Time [s] \\\hline\hline
-        M53 (PA 0) &   2015 May 05 &  $0.27 \pm 0.081$ & $62 \pm 7.8$ & $390 \pm 44$ & 300\\
-        M53 (PA 90) &   2015 May 05 & $0.35 \pm 0.026$ & $55 \pm 1.3$ & $350 \pm 12$ & 300\\\hline
+        PA 0 & 2015 May 05 &  $0.27 \pm 0.081$ & $62 \pm 7.8$ & $390 \pm 44$ & 300\\
+        PA 90 & 2015 May 05 & $0.35 \pm 0.026$ & $55 \pm 1.3$ & $350 \pm 12$ & 300\\\hline
 \end{tabular}
 \end{table}
 
