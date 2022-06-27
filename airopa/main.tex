@@ -164,11 +164,32 @@ We present the AIROPA single-PSF and variable-PSF results for each field analyze
  \caption{\footnotesize \textit{Top row}: 2D Positional difference in single vs. variable PSF modes. Quiver plot shows positional differences as a function of field location. \textit{Bottom row}: 1D positional differences with errors derived from the RMS deviation of six positional measurements.} \label{fig:gc-gq-astrom}
 \end{figure}
 
-\indent There are three primary metrics that we use to assess the performance of each PSF mode in AIROPA, these are the photometric uncertainty, astrometric uncertainty, and FVU. As mentioned previously, we expect the varying conditions, data quality, PSF reference stars, and stellar crowding to impact the effectiveness of AIROPA to reconstruct the PSF. Along with instrumental aberrations and atmospheric anisoplanatism, the combination of these factors (on the instrument and on-sky) work to effectively increase the overall noise present in the reconstructed PSFs, stellar profiles, and extracted photometry, astrometry, and FVU. For each dataset, a relative comparison of these metrics between the PSF modes should reveal any differences in the overall PSF-R performance and/or results for each mode. 
-\\
+\indent There are three primary metrics that we use to assess the performance of each PSF mode in AIROPA, these are the photometric uncertainty, astrometric uncertainty, and FVU. As mentioned previously, we expect the varying conditions, data quality, PSF reference stars, and stellar crowding to impact the effectiveness of AIROPA to reconstruct the PSF. Along with instrumental aberrations and atmospheric anisoplanatism, the combination of these factors (on the instrument and on-sky) work to effectively increase the overall noise present in the reconstructed PSFs, stellar profiles, and extracted photometry, astrometry, and FVU. For each dataset, a relative comparison of these metrics between the PSF modes should reveal any differences in the overall PSF-R performance and/or results for each mode.
+
+\begin{table}[!h]
+\caption{Astrometric and photometric differences between Single and Variable modes}
+\setlength{\tabcolsep}{8.0pt}
+\begin{center}
+\begin{tabular}{lccccc}
+    \hline\hline
+    {} & {} & \multicolumn{2}{c}{$\Delta m_{(S-V)}$ [mag]} & \multicolumn{2}{c}{$\Delta r_{(S-V)}$ [mas]}\\
+    \cmidrule(lr){3-4}\cmidrule(l){5-6}
+        Field & $N_{\textrm{stars}}$ & $r \leq 3$\textquotesingle\textquotesingle & $r > 3$\textquotesingle\textquotesingle & $r \leq 3$\textquotesingle\textquotesingle & $r > 3$\textquotesingle\textquotesingle\\
+        \hline
+        GC (GQ) & 840 & $-0.06 \pm 0.05$ & $0.02 \pm 0.05$ & $0.18 \pm 0.98$ & $1.17 \pm 1.25$\\
+        GC (AQ) & 576 & $-0.04 \pm 0.06$ & $0.04 \pm 0.06$ & $0.18 \pm 1.40$ & $1.17 \pm 1.64$\\
+        GC (PQ) & 445 & $-0.02 \pm 0.05$ & $0.04 \pm 0.07$ & $0.15 \pm 1.59$ & $0.92 \pm 2.08$\\
+        OB150029 &  63 &  $0.04 \pm 0.05$ & $0.10 \pm 0.05$ & $0.25 \pm 0.74$ & $1.23 \pm 0.93$\\
+        M53 (PA 0) & 72 &  $-0.02 \pm 0.08$ & $0.07 \pm 0.09$ & $0.33 \pm 1.29$ & $1.15 \pm 1.60$\\
+        M53 (PA 90) & 160 & $0.02 \pm 0.07$ & $0.10 \pm 0.08$ & $0.29 \pm 1.29$ & $1.10 \pm 1.40$\\\hline
+\end{tabular}
+\end{center}
+\label{tab:PhotAstromDiff-results}
+\end{table}
+
 \indent In addition to the three primary metrics mentioned above, we also compare the M53 astrometry and photometry from each PSF mode to several external catalogues. We make these comparisons in an attempt to determine which PSF mode gives results that are more consistent with an external reference. As \cite{Turri:inprep} show, there is a clear ``relative" difference in astrometry and photometry between the two PSF modes in AIROPA, however this information alone does not tell us which PSF mode gives a more ``true" result. Performing a comparison like the one described in the subsequent M53 results sections should give evidence of the ``absolute" difference between the two PSF modes and the ``true" result.
 \\
-\indent Table \ref{tab:PhotAstromFVU-results} gives the photometry, astrometry, and FVU results for all datasets analyzed in this work. The table includes results for all detected stars in each set, as well as results for the brightest stars (i.e. $m_K < 13$), as the PSF residuals at the brightest magnitudes are primarily affected by PSF systematic errors rather than noise \cite{Turri:inprep}. 
+\indent Table \ref{tab:PhotAstromFVU-results} gives the photometry, astrometry, and FVU results for all datasets analyzed in this work. The table includes results for all detected stars in each set, as well as results for the brightest stars (i.e. $m_K < 13$), as the PSF residuals at the brightest magnitudes are primarily affected by PSF systematic errors rather than noise \cite{Turri:inprep}.
 
 \begin{figure}[!h]
   %\hspace{-1.04cm}
@@ -314,36 +335,11 @@ A total of 72 stars were cross-matched across all PA 0 frames, with 10 of the st
 \end{figure}
 
 \begin{table}[!h]
-\caption{Radial dependence on the astrometric and photometric differences of Single and Variable modes}
-\setlength{\tabcolsep}{8.0pt}
-\begin{center}
-\begin{tabular}{lccccc}
-    \hline\hline
-    {} & {} & \multicolumn{2}{c}{$\Delta m_{(S-V)}$ [mag]} & \multicolumn{2}{c}{$\Delta r_{(S-V)}$ [mas]}\\
-    \cmidrule(lr){3-4}\cmidrule(l){5-6}
-        Field & $N_{\textrm{stars}}$ & $r \leq 3$\textquotesingle\textquotesingle & $r > 3$\textquotesingle\textquotesingle & $r \leq 3$\textquotesingle\textquotesingle & $r > 3$\textquotesingle\textquotesingle\\
-        \hline
-        GC (GQ) & 840 & $0.41 \pm 0.039$ & $53 \pm 4.5$ & $320 \pm 18$ & 168\\
-        GC (AQ) & 576 & $0.29 \pm 0.024$ & $66 \pm 3.5$ & $380 \pm 13$ & 168\\
-        GC (PQ) & 445 & $0.21 \pm 0.025$ & $82 \pm 6.6$ & $430 \pm 18$ & 168\\
-        OB150029 &  63 &  $0.39 \pm 0.037$ & $48 \pm 1.9$ & $330 \pm 17$ & 180\\
-        M53 (PA 0) & 72 &  $0.27 \pm 0.081$ & $62 \pm 7.8$ & $390 \pm 44$ & 300\\
-        M53 (PA 90) & 160 & $0.35 \pm 0.026$ & $55 \pm 1.3$ & $350 \pm 12$ & 300\\\hline
-\end{tabular}
-\end{center}
-\label{tab:PhotAstromDiff-results}
-\end{table}
-
-\begin{table}[!h]
 \centering
 \caption{M53 astrometric and color results with HST and Gaia} \label{tab:m53-AstromColor-results}
 \begin{tabular}{lccccc}
 \hline
         Field &  Date [UT] &  Strehl Ratio &  FWHM [mas] &  RMS WFE [nm] & Exp. Time [s] \\\hline\hline
-        GC (GQ) &   2017 Aug 11 & $0.41 \pm 0.039$ & $53 \pm 4.5$ & $320 \pm 18$ & 168\\
-        GC (AQ) &   2017 Aug 23 & $0.29 \pm 0.024$ & $66 \pm 3.5$ & $380 \pm 13$ & 168\\
-        GC (PQ) &   2016 May 03 & $0.21 \pm 0.025$ & $82 \pm 6.6$ & $430 \pm 18$ & 168\\
-        OB150029 &    2016 Jul 14 &  $0.39 \pm 0.037$ & $48 \pm 1.9$ & $330 \pm 17$ & 180\\
         M53 (PA 0) &   2015 May 05 &  $0.27 \pm 0.081$ & $62 \pm 7.8$ & $390 \pm 44$ & 300\\
         M53 (PA 90) &   2015 May 05 & $0.35 \pm 0.026$ & $55 \pm 1.3$ & $350 \pm 12$ & 300\\\hline
 \end{tabular}
