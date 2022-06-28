@@ -180,7 +180,7 @@ We present the AIROPA single-PSF and variable-PSF results for each field analyze
         GC (AQ) & 576 & $-0.04 \pm 0.06$ & $0.04 \pm 0.06$ & $0.18 \pm 1.40$ & $1.17 \pm 1.64$\\
         GC (PQ) & 445 & $-0.02 \pm 0.05$ & $0.04 \pm 0.07$ & $0.15 \pm 1.59$ & $0.92 \pm 2.08$\\
         OB150029 &  63 &  $0.04 \pm 0.05$ & $0.10 \pm 0.05$ & $0.25 \pm 0.74$ & $1.23 \pm 0.93$\\
-        M53 (PA 0) & 72 &  $-0.02 \pm 0.08$ & $0.07 \pm 0.09$ & $0.33 \pm 1.29$ & $1.15 \pm 1.60$\\
+        M53 (PA 0) & 98 &  $-0.02 \pm 0.08$ & $0.07 \pm 0.09$ & $0.33 \pm 1.29$ & $1.15 \pm 1.60$\\
         M53 (PA 90) & 160 & $0.02 \pm 0.07$ & $0.10 \pm 0.08$ & $0.29 \pm 1.29$ & $1.10 \pm 1.40$\\\hline
 \end{tabular}
 \end{center}
@@ -245,7 +245,7 @@ As expected the PQ dataset had the smallest number of detected stars, at 445, th
 \indent As a final test for this microlensing dataset, we performed an identical AIROPA analysis while omitting the target itself as a PSF reference star. Ideally, the results of such a test will reveal the influence (if any) that the target (i.e. brightest star in the field) has on the PSF modeling and extraction as well as the fitting parameters and residuals measured by the single-PSF and variable-PSF algorithms. The results of this re-analysis show indistinguishable results for the astrometric and photometric precision for the microlensing target ($\sigma_{r}=0.223$ mas, $\sigma_{m}=0.025$ mag), as well as an FVU value that is consistent (within 1$\sigma$) of the value measured while including the target as a PSF reference star.
 
 \subsection{M53} \label{sec:results-m53}
-As described in Section \ref{sec:m53-data}, the two M53 datasets have significantly different data qualities. In particular, the PA 0 dataset has the largest variance in SR, FWHM, and RMS WFE of all data in this study. This is largely because the observing window for the PA 0 data spans a time frame where the DIMM and MASS monitors recorded a particularly high seeing measurement (right panel of Figure \ref{fig:dimmmass_datasets}, green-colored data). This is likely due to high cirrus cloud cover or other turbulent layers in the high-alitude atmosphere during some of the PA 0 exposures. A relatively small total number of PA 0 images were taken on the night (see Table 1 of \cite{service:2016a}), and the frames that correspond to the DIMM/MASS spike seen in Figure \ref{fig:dimmmass_datasets} happen to be the images that have the most observed sources in common with with the PA 90 images that were taken approximately one hour later in the night. Because we want to maximize the total number of cross-referenced stars in both PAs, we chose to keep the PA 0 frames that were captured during the DIMM/MASS spike. We note that AIROPA (and the Arroyo software) associate only two of the six total PA 0 images with the large DIMM and MASS measurement.
+As described in Section \ref{sec:m53-data}, the two M53 datasets have significantly different data qualities. In particular, the PA 0 dataset has the largest variance in SR, FWHM, and RMS WFE of all data in this study. This is largely because the observing window for the PA 0 data spans a time frame where the DIMM and MASS monitors recorded a particularly high seeing measurement (right panel of Figure \ref{fig:dimmmass_datasets}, green-colored data). This is likely due to high cirrus cloud cover or other turbulent layers in the high-altitude atmosphere during two of the PA 0 exposures. A relatively small total number of PA 0 images were taken on the night (see Table 1 of \cite{service:2016a}), and the frames that correspond to the DIMM/MASS spike seen in Figure \ref{fig:dimmmass_datasets} happen to be the images that have the most observed sources in common with with the PA 90 images that were taken approximately one hour later in the same night. Because we want to maintain consistency amongst all datasets and to maximize the total number of cross-referenced stars in both PAs, we chose to keep all of the PA 0 frames for this particular dither position. This mostly affects the fainter stars in the field, as can be seen by comparing the PA 0 and PA 90 panels in Figure \ref{fig:ob-m53-astromfvu-ratios}. We note that AIROPA (and the Arroyo software) associates only two PA 0 images with the large DIMM and MASS measurement.
 
 \begin{table}[!h]
 \caption{Average photometric, astrometric uncertainties, and FVU results for each dataset}
@@ -290,7 +290,7 @@ As described in Section \ref{sec:m53-data}, the two M53 datasets have significan
 \end{figure}
 
 \subsubsection{M53 PA 0} \label{sec:result-m53-pa0}
-A total of 72 stars were cross-matched across all PA 0 frames, with 10 of the stars used to build the initial PSF model. The location and brightness of the selected PSF reference stars are given by the colored data points in the bottom panels of Figure \ref{fig:m53_image_grid}. The difference in astrometry, photometry, and FVU between Single-PSF and Variable-PSF modes follow the same trends seen in the GC and OB150029 analyses (Tables \ref{tab:PhotAstromFVU-results} and \ref{tab:PhotAstromDiff-results}). The most significant difference for the M53 PA 0 Single and Variable PSF modes comes from the comparison of the photometric uncertainties (middle panel of Figure \ref{fig:ob-m53-astromfvu-ratios}). The results imply that the Variable-PSF mode gives significantly lower photometric errors than the Single-PSF mode, particularly for the brighter stars in the field (see Table \ref{tab:PhotAstromFVU-results} columns 3$-$4 for M53 PA 0).
+A total of 98 stars were cross-matched across all PA 0 frames, with 10 of the stars used to build the initial PSF model. The location and brightness of the selected PSF reference stars are given by the colored data points in the bottom panels of Figure \ref{fig:m53_image_grid}. The difference in astrometry, photometry, and FVU between Single-PSF and Variable-PSF modes follow the same trends seen in the GC and OB150029 analyses (Tables \ref{tab:PhotAstromFVU-results} and \ref{tab:PhotAstromDiff-results}). The most significant difference for the M53 PA 0 Single and Variable PSF modes comes from the comparison of the photometric uncertainties (middle panel of Figure \ref{fig:ob-m53-astromfvu-ratios}). The results imply that the Variable-PSF mode gives significantly lower photometric errors than the Single-PSF mode, particularly for the brighter stars in the field (see Table \ref{tab:PhotAstromFVU-results} columns 3$-$4 for M53 PA 0).
 
 \subsubsection{M53 PA 90} \label{sec:result-m53-pa90}
 The higher quality PA 90 data have a total of 160 stars cross-matched in all images, with the same 10 stars used as PSF reference stars. Again there is no marked improvement in any of the fitting metrics we examined for this data set. The difference in stellar positions and magnitudes also follow similar trends seen in the previous data (Table \ref{tab:PhotAstromDiff-results}).
@@ -337,14 +337,22 @@ The higher quality PA 90 data have a total of 160 stars cross-matched in all ima
 \end{figure}
 
 \begin{table}[!h]
-\centering
-\caption{M53 astrometric and color results with HST and Gaia} \label{tab:m53-AstromColor-results}
-\begin{tabular}{lccccc}
-\hline
-        Field &  Date [UT] &  Strehl Ratio &  FWHM [mas] &  RMS WFE [nm] & Exp. Time [s] \\\hline\hline
-        PA 0 & 2015 May 05 &  $0.27 \pm 0.081$ & $62 \pm 7.8$ & $390 \pm 44$ & 300\\
-        PA 90 & 2015 May 05 & $0.35 \pm 0.026$ & $55 \pm 1.3$ & $350 \pm 12$ & 300\\\hline
+\caption{M53 astrometric and color results with HST and Gaia}
+\setlength{\tabcolsep}{8.0pt}
+\begin{center}
+\begin{tabular}{lcccccc}
+    \hline\hline
+    {} & {} & \multicolumn{1}{c}{PA 0} & {} & {} & \multicolumn{1}{c}{PA 90}\\
+    \cmidrule(lr){2-4}\cmidrule(l){5-7}
+        Reference Frame & $N_{\textrm{matched}}$ & $\delta r_{\textrm{Single}}$ & Variable & $N_{\textrm{matched}}$ & Single & Variable\\
+        \hline
+        PA 0 & -- &  -- & -- & 94 & $1.15 \pm 1.60$ & 72\\
+        PA 90 & 94 & $0.02 \pm 0.07$ & $0.10 \pm 0.08$ & -- & -- & --\\
+        HST & 72 &  $-0.02 \pm 0.08$ & $0.07 \pm 0.09$ & $0.33 \pm 1.29$ & $1.15 \pm 1.60$ & 72\\
+        Gaia & 72 &  $-0.02 \pm 0.08$ & $0.07 \pm 0.09$ & $0.33 \pm 1.29$ & $1.15 \pm 1.60$ & 72\\\hline
 \end{tabular}
+\end{center}
+\label{tab:m53-AstromColor-results}
 \end{table}
 
 %----------------Discussion and Conclusions------------------------------------------------------------------------------------------------------------
