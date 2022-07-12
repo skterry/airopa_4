@@ -17,7 +17,7 @@
 \usepackage{subfig}
 %\usepackage[caption=false]{subfig}
 \usepackage[left]{lineno}
-\linenumbers
+%\linenumbers
 
 \renewcommand{\arraystretch}{1.3}
 
@@ -167,7 +167,7 @@ We present the AIROPA single-PSF and variable-PSF results for each field analyze
 \indent There are three primary metrics that we use to assess the performance of each PSF mode in AIROPA, these are the photometric uncertainty, astrometric uncertainty, and FVU. As mentioned previously, we expect the varying conditions, data quality, PSF reference stars, and stellar crowding to impact the effectiveness of AIROPA to reconstruct the PSF. Along with instrumental aberrations and atmospheric anisoplanatism, the combination of these factors (on the instrument and on-sky) work to effectively increase the overall noise present in the reconstructed PSFs, stellar profiles, and extracted photometry, astrometry, and FVU. For each dataset, a relative comparison of these metrics between the PSF modes should reveal any differences in the overall PSF-R performance and/or results for each mode.
 
 \begin{table}[!h]
-\caption{Astrometric and photometric differences between Single and Variable modes}
+\caption{Photometric and Astrometric differences between Single and Variable modes}
 \setlength{\tabcolsep}{8.0pt}
 \begin{center}
 \begin{tabular}{lccccc}
@@ -193,9 +193,9 @@ We present the AIROPA single-PSF and variable-PSF results for each field analyze
 
 \begin{figure}[!h]
   %\hspace{-1.04cm}
-  \subfloat{\includegraphics[width=0.33\textwidth]{Figures/GQ_fvuPhotAstrom-ratio.pdf}}
-  \subfloat{\includegraphics[width=0.33\textwidth]{Figures/AQ_fvuPhotAstrom-ratio.pdf}}
-   \subfloat{\includegraphics[width=0.33\textwidth]{Figures/PQ_fvuPhotAstrom-ratio.pdf}}
+  \subfloat{\includegraphics[width=0.33\textwidth]{Figures/BINNED_GQ_fvuPhotAstrom-ratio_errorbars.pdf}}
+  \subfloat{\includegraphics[width=0.33\textwidth]{Figures/BINNED_AQ_fvuPhotAstrom-ratio_errorbars.pdf}}
+   \subfloat{\includegraphics[width=0.33\textwidth]{Figures/BINNED_PQ_fvuPhotAstrom-ratio_errorbars.pdf}}
   \caption{\footnotesize Ratio of astrometric errors, photometric errors, and FVU values for the GC datasets; GQ (\textit{left column}), AQ (\textit{middle column}), and PQ (\textit{right column}). Values larger than one indicate the variable-PSF mode resulted in smaller astrometric/photometric residuals and smaller FVU, respectively.} \label{fig:gc-astrom}
 \end{figure}
 
@@ -208,7 +208,7 @@ We present the AIROPA single-PSF and variable-PSF results for each field analyze
 \\
 \indent The top right panel of Figure \ref{fig:gc-gq-astrom} shows the field position for each detected star and the corresponding 2D position difference (X,Y) on the detector plane. The 1D differences are shown in the bottom panels of Figure \ref{fig:gc-gq-astrom}. The mean difference in each direction across the detector is $\Delta X_{S-V} = -0.21 \pm 1.33$ mas and $\Delta Y_{S-V} = -0.66 \pm 0.82$.
 \\
-\indent The average photometric and astrometric precision for all GQ stars is $\sigma_{{m}}{\sim}0.03$ mag and $\sigma_{{r}}{\sim}0.81$ mas, respectively for both single and variable-PSF modes. Further, the average FVU metric is very similar for the variable-PSF mode ($4.67\times10^{-2}$) and single-PSF mode ($4.70\times10^{-2}$). There may be evidence of some improvement in the astrometric errors and FVUs for only the brightest stars in the field (i.e. left column of Figure \ref{fig:gc-astrom}), but any possible improvement here is significantly less than what has been measured on simulation tests \cite{Turri:inprep}.
+\indent The average photometric and astrometric precision for all GQ stars in both PSF modes is $\sigma_{{m}}{\sim}0.04$ mag and $\sigma_{{r}}{\sim}0.81$ mas, respectively. Further, the average FVU metric is very similar for the variable-PSF mode ($4.67\times10^{-2}$) and single-PSF mode ($4.70\times10^{-2}$). There may be evidence of some improvement in the astrometric errors and FVUs for only the brightest stars in the field (i.e. left column of Figure \ref{fig:gc-astrom}), but any possible improvement here is significantly less than what has been measured on simulation tests \cite{Turri:inprep}.
 
 \subsubsection{GC: Average Quality (AQ)} \label{sec:results-gc-AQ}
 The total number of stars detected across all AQ frames is 576, approximately 30\% less than the GQ dataset. As expected, the average uncertainties are marginally larger than those from the GQ dataset. When comparing the results from both PSF modes, we measure marginally smaller uncertainties for the variable-PSF mode over the single-PFS mode. While these results imply that variable-PSF is performing better than single-PSF mode, we note again that these improvements are still well below what has been shown through simulated data tests.
@@ -232,9 +232,9 @@ As expected the PQ dataset had the smallest number of detected stars, at 445, th
 
 \begin{figure}[!h]
   %\hspace{-1.04cm}
-  \subfloat{\includegraphics[width=0.33\textwidth]{Figures/OB150029_fvuPhotAstrom-ratio.pdf}}
-  \subfloat{\includegraphics[width=0.33\textwidth]{Figures/m53pa0_fvuPhotAstrom-ratio.pdf}}
-   \subfloat{\includegraphics[width=0.33\textwidth]{Figures/m53pa90_fvuPhotAstrom-ratio.pdf}}
+  \subfloat{\includegraphics[width=0.33\textwidth]{Figures/BINNED_OB150029_fvuPhotAstrom-ratio_errorbars.pdf}}
+  \subfloat{\includegraphics[width=0.33\textwidth]{Figures/BINNED_m53pa0_fvuPhotAstrom-ratio_errorbars.pdf}}
+   \subfloat{\includegraphics[width=0.33\textwidth]{Figures/BINNED_m53pa90_fvuPhotAstrom-ratio_errorbars.pdf}}
   \caption{\footnotesize Same as Figure \ref{fig:gc-astrom}, but for OB150029 (\textit{left column}), M53 PA $=0$ (\textit{middle column}), and M53 PA $=90$ (\textit{right column}).} \label{fig:ob-m53-astromfvu-ratios}
 \end{figure}
 
@@ -253,7 +253,7 @@ As described in Section \ref{sec:m53-data}, the two M53 datasets have significan
 \begin{center}
 \begin{tabular}{lccccccc}
     \hline\hline
-    {} & {} & \multicolumn{2}{c}{$\overline{\sigma}_{m}$ [mag]} & \multicolumn{2}{c}{$\overline{\sigma}_{r}$ [mas]} & \multicolumn{2}{c}{$\overline{FVU}$}\\
+    {} & {} & \multicolumn{2}{c}{$\overline{\sigma}_{m}$ [mag]} & \multicolumn{2}{c}{$\overline{\sigma}_{r}$ [mas]} & \multicolumn{2}{c}{$\langle FVU \rangle$}\\
     \cmidrule(lr){3-4}\cmidrule(l){5-6}\cmidrule(l){7-8}
         Field & PSF Mode & All & $m_{K} < 13$ & All & $m_{K} < 13$ & All & $m_{K} < 13$\\
         \hline
@@ -276,7 +276,7 @@ As described in Section \ref{sec:m53-data}, the two M53 datasets have significan
         {} & Variable & $0.059$ & $0.039$ & $0.972$ & $0.307$ & $0.215 \pm 0.176$ & $0.002 \pm 0.001$\\\hline
 \end{tabular}
 \end{center}
-{\raggedright \footnotesize{\textbf{Note}. Average photometric uncertainty in magnitudes is given by $\overline{\sigma}_{m}$ (columns 3-4), average astrometric uncertainty in milliarcseconds is given by $\overline{\sigma}_{r}$ (columns 5-6).}\par}
+{\raggedright \footnotesize{\textbf{Note}. Average photometric uncertainty in magnitudes is given by $\overline{\sigma}_{m}$ (columns 3-4), average astrometric uncertainty in milliarcseconds is given by $\overline{\sigma}_{r}$ (columns 5-6). The mean FVU and 1$\sigma$ error is given in columns 7-8.}\par}
 %\tablenotetext{}{\footnotesize{\textbf{Note}. Average photometric uncertainty is given by $\overline{\sigma}_{m}$, average astrometric uncertainty is given by $\overline{\sigma}_{r}$.}}
 \label{tab:PhotAstromFVU-results}
 \end{table}
@@ -290,25 +290,24 @@ As described in Section \ref{sec:m53-data}, the two M53 datasets have significan
 \end{figure}
 
 \subsubsection{M53 PA 0} \label{sec:result-m53-pa0}
-A total of 98 stars were cross-matched across all PA 0 frames, with 10 of the stars used to build the initial PSF model. The location and brightness of the selected PSF reference stars are given by the colored data points in the bottom panels of Figure \ref{fig:m53_image_grid}. The difference in astrometry, photometry, and FVU between Single-PSF and Variable-PSF modes follow the same trends seen in the GC and OB150029 analyses (Tables \ref{tab:PhotAstromFVU-results} and \ref{tab:PhotAstromDiff-results}). The most significant difference for the M53 PA 0 Single and Variable PSF modes comes from the comparison of the photometric uncertainties (middle panel of Figure \ref{fig:ob-m53-astromfvu-ratios}). The results imply that the Variable-PSF mode gives significantly lower photometric errors than the Single-PSF mode, particularly for the brighter stars in the field (see Table \ref{tab:PhotAstromFVU-results} columns 3$-$4 for M53 PA 0).
-
-\subsubsection{M53 PA 90} \label{sec:result-m53-pa90}
-The higher quality PA 90 data have a total of 160 stars cross-matched in all images, with the same 10 stars used as PSF reference stars. Again there is no marked improvement in any of the fitting metrics we examined for this data set. The difference in stellar positions and magnitudes also follow similar trends seen in the previous data (Table \ref{tab:PhotAstromDiff-results}).
-
-
-\subsubsection{HST Cross Reference} \label{sec:m53-hst}
-
-\indent Next, the M53 star lists were transformed and matched to the HST reference frame using archival HST ACS data \cite{service:2016a}. Figure \ref{fig:m53_PA_compare_hst} shows the astrometric residual quiver plots in the upper panels, and corresponding distribution of residuals in the lower panels. The astrometric residuals are shown in.
-\\
-\indent We use the HST photometric measurements as an absolute standard to compare the NIRC2 single-PSF and variable-PSF photometry against. We do this by generating a color-magnitude diagram (CMD) for each mode, where we compare the HST I-band and Keck K-band color against the Keck K-band magnitudes for all cross-matched stars in each catalogue. We then use SPISEA to generate a stellar isochrone for the cluster, given a cluster age, metallicity, and extinction law from the literature (CITE).
+A total of 98 stars were cross-matched across all PA 0 frames, with 10 of the stars used to build the initial PSF model. The location and brightness of the selected PSF reference stars are given by the colored data points in the bottom panels of Figure \ref{fig:m53_image_grid}. The difference in astrometry, photometry, and FVU between Single-PSF and Variable-PSF modes largely follow the same trends seen in the GC and OB150029 analyses (Tables \ref{tab:PhotAstromFVU-results} and \ref{tab:PhotAstromDiff-results}). Interestingly, the most significant difference for the M53 PA 0 Single and Variable PSF modes comes from the comparison of the photometric uncertainties (middle panel of Figure \ref{fig:ob-m53-astromfvu-ratios}). The results show that the Variable-PSF mode gives significantly lower photometric errors than the Single-PSF mode, particularly for the brighter stars in the field (see middle panel of Figure \ref{fig:ob-m53-astromfvu-ratios} and Table \ref{tab:PhotAstromFVU-results} columns 3$-$4 for M53 PA 0). \\
+\indent It is worth noting a similar, yet less significant trend in photometric precision is also seen in the poorest quality GC data set (GC PQ). These trends suggest that for lower-quality, less uniform point sources, the spatially variable PSF model more precisely determines the flux-weighted centroid position of the stars compared to the static PSF model. Additionally, the magnitudes and colors of the M53 stars as a function of off-axis location show a significant improvement in variable-PSF mode when comparing to an absolute \textit{HST} reference (Section \ref{sec:m53-hst}).
 
 \begin{figure}[!h]
   \centering
-  \subfloat{\includegraphics[width=0.95\textwidth]{airopa/Figures/m53-to-hst_both_matched_quivers_PA0_noWeights.pdf}}\\
+  \subfloat{\includegraphics[width=0.95\textwidth]{airopa/Figures/m53-to-hst_both_matched_quivers_PA90_noWeights.pdf}}\\
   \hspace{-1cm}
-  \subfloat{\includegraphics[width=0.95\textwidth]{airopa/Figures/m53-to-hst_histAndCorrelation_PA0_noWeights.pdf}}
+  \subfloat{\includegraphics[width=0.95\textwidth]{airopa/Figures/m53-to-hst_histAndCorrelation_PA90_noWeights.pdf}}
   \caption{Same as Figure \ref{fig:m53_PA_compare} but for stars matched and transformed to HST. The color bar is given in F814W (Vega) magnitude. The vertical black line on the lower left panel shows the residual distortion calculated by \cite{service:2016a}.} \label{fig:m53_PA_compare_hst}
 \end{figure}
+
+\subsubsection{M53 PA 90} \label{sec:result-m53-pa90}
+The higher quality PA 90 data has a total of 160 stars cross-matched in all images, with the same 10 stars used as PSF reference stars (lower-right panel of Figure \ref{fig:m53_image_grid}). Like the previous data sets, there is little to no improvement in the variable-PSF fitting metrics compared to the single-PSF results. The difference in stellar positions and magnitudes also follow similar trends seen in the previous data (Table \ref{tab:PhotAstromDiff-results}). The average photometric error for all stars is ${\sim}15$\% larger in the variable mode compared to single mode. The average astrometric error is nearly identical in both modes, at a ${\sim}1$\% difference. The FVU value in both modes are within $1\sigma$ of each other (bottom row of Table \ref{tab:PhotAstromFVU-results}). \\
+\indent Finally, we investigated the difference between astrometric residuals in both PSF modes after matching and transforming the PA 0 star list to the PA 90 list (and vice versa). We perform a first order transformation using both stacked star lists from each PA as the master reference list and star list to be transformed in both cases. If the variable-PSF mode performs better, then we would expect astrometric residuals from this transformation process to be smaller for the spatially varying PSF mode, particularly for larger off-axis stars in the frames. Figure \ref{fig:m53_PA_compare} shows the resulting astrometric quiver plots in the top panels, and the distribution and correlation between the astrometric residuals in both PSF modes in the bottom panels. The two distributions are very similar, and correlations largely follow the line of unity with a dispersion of ${\sim}$a few mas (bottom right panel of Figure \ref{fig:m53_PA_compare}), which show that the astrometric residuals from the variable-PSF mode are not measurably smaller than the single-PSF residuals.
+
+\subsubsection{HST Cross Reference} \label{sec:m53-hst}
+
+\indent Both PA's star lists were then independently transformed to an \textit{HST} reference frame using archival \textit{HST ACS} data \cite{service:2016a}, with the same intention of examining the difference in astrometric residuals between single and variable modes. Figure \ref{fig:m53_PA_compare_hst} shows the PA 90 astrometric residual quiver plots in the upper panels, and corresponding distribution of astrometric residuals as well as the correlation between single-PSF and variable-PSF residuals in the lower panels. The distribution of astrometric residuals peaks at $1.52$ mas in both PSF modes, this is consistent with the residual distortion on the NIRC2 detector that was found in \cite{service:2016a} (denoted by the vertical black line in the bottom left panel of Figure \ref{fig:m53_PA_compare_hst}). The weighted mean and central 68\% of both PSF mode distributions is given in Table \ref{tab:m53-AstromResidual-results}. This table includes all variations of star list transformations that were performed on the M53 data sets (i.e. NIRC2, \textit{HST}, and \textit{Gaia}). 
 
 \begin{figure}[!h]
   \centering
@@ -318,9 +317,13 @@ The higher quality PA 90 data have a total of 160 stars cross-matched in all ima
   \caption{\textit{Top row}: The M53 \textit{HST I}$-$Keck $K$ vs. Keck $K$ CMDs for both single-PSF and variable-PSF star lists. The solid black curve gives the best-fit PARSEC isochrone, with the appropriate age and metallicity for the cluster \cite{dotter:2011a,wagner:2016a}. \textit{Bottom row}: The measured color index difference (i.e. empirical vs. isochrone) in single-PSF and variable-PSF modes as a function of radial distance from the frame center. The solid red line shows the linear best-fit to each distribution. The distribution of color differences for single-PSF mode has a clear trend in radial distance, while the distribution is largely constant for variable-PSF mode.} \label{fig:m53_cmd_colorshift}
 \end{figure}
 
-\subsubsection{Gaia Cross Reference} \label{sec:m53-gaia}
+\indent Further, we use the HST photometric measurements as an absolute standard to compare the NIRC2 single-PSF and variable-PSF photometry against. We do this by generating a color-magnitude diagram (CMD) for each PSF mode and PA, where we compare the HST I $-$ Keck K color against the Keck K magnitudes for all cross-matched stars in each catalogue. The NIRC2 data were photometrically calibrated to 2MASS Ks band magnitudes for this process. 
+%We typically calibrate to the VVV catalogue \cite{minniti:2010a}, which was not possible for this globular cluster because the data is not within the VVV field of view.
+We cross-identify two bright stars in common between the NIRC2 data and 2MASS (2MASS J13125435+1810172 and 2MASS J13125408+1810194). From this cross-identification we calculate a zeropoint offset of 3.70 and apply this to all stars in each catalogue, including a calibration error of 0.06 magnitudes.
+\\
+\indent We then use the open-source package SPISEA \citep{hosek:2020a} to generate a synthetic population for the cluster. We use parameters for the cluster age, metallicity, and mass fraction from \cite{dotter:2011a} and \cite{wagner:2016a}. We also adopt the extinction law of \cite{schlafly:2016a} when generating the population. The top panels of Figure \ref{fig:m53_cmd_colorshift} show the single-PSF and variable-PSF CMDs. The data are colored by off-axis radial distance in the NIRC2 frames, and the best-fit isochrone from SPISEA is overlaid (black curve). Characteristic errors in color and magnitude for the CMDs are given by the vertical columns. There is a clear trend seen in the comparison between the CMD stars and the isochrone model in the single-PSF CMD. The difference in color between the stars and isochrone model shows a relatively strong dependence on radial distance in the NIRC2 frames. This same dependence is not seen in the comparison of the variable-PSF CMD and best-fit isochrone model. The lower panels of Figure \ref{fig:m53_cmd_colorshift} show the color difference measurements (and errors) as a function of off-axis distance. A linear fit is made to each distribution, and the resulting slopes are $0.041 \pm 0.008$ mag arcsec$^{-1}$ for single-PSF mode and $-0.002 \pm 0.009$ mag arcsec$^{-1}$ for variable-PSF mode. These results suggest roughly an order of magnitude improvement in the photometric performance of the variable-PSF mode compared to single-PSF mode. This marks the first definitive example of a significant improvement shown by variable-PSF mode over the single-PSF mode for on-sky science data.
 
-\indent The star lists from both PA's were matched and transformed to Gaia EDR3 \cite{brown:2021a}. There were a total of 32 matched stars between both PA's and Gaia, which can be seen as the star symbols in Figure \ref{fig:m53_aen}. The quiver plots in the top panels of Figure \ref{fig:m53_PA_compare_gaia} look nearly identical because the astrometric differences between the two PSF modes is significantly smaller than the astrometric difference between the NIRC2 and Gaia positions. The distribution of astrometric residuals for both PA's peaks at $\sigma_{r}\leq5$ mas, and the faintest stars have the largest residuals, as expected. Generally, the Gaia residuals are large for several reason; the coordinate system transformation between NIRC2 and Gaia is larger than NIRC2 to HST because the Gaia astrometric precision is much larger than HST (or NIRC2), particularly in crowded stellar fields (CITE). Additional considerations need to be made when matching the two PA's to Gaia (i.e. astrometric fitting errors described in \cite{brown:2018a} and \cite{brown:2021a}). In particular the ``astrometric excess noise ($\epsilon$)" parameter is described as the excess uncertainty that must be added in quadrature to obtain a statistically acceptable astrometric solution. Further, the excess term $\epsilon$ is introduced in order to effectively reduce the statistical weight of observations that may be affected by things like instrument and attitude modeling errors. Initially, 32 stars are cross-matched to Gaia, of which 30 have $\epsilon <  10$ mas, which corresponds to less than 1 NIRC2 pixel (Figure \ref{fig:m53_aen}). Further, we make a cut at $\epsilon <  5$ mas (Figure \ref{fig:m53_aen} vertical line) to reject noisier stars by this metric, which leaves 24 Gaia stars used for the final transformation. More information on this astrometric noise term is given in \cite{lindegren:2012a}. A final detail worth noting is the PSF-fitting and source extraction are not strictly centroid-conserving. This means the flux weighted centroid that is measured by AIROPA does not represent the `true' centroid position, and is particularly important for off-axis stars that suffer from significant anisoplanatism. This effect is estimated to be at the ${\sim}5$ mas level, at worst.
+\subsubsection{Gaia Cross Reference} \label{sec:m53-gaia}
 
 \begin{figure}[!h]
  \centering
@@ -333,26 +336,56 @@ The higher quality PA 90 data have a total of 160 stars cross-matched in all ima
   \subfloat{\includegraphics[width=0.95\textwidth]{airopa/Figures/m53-to-gaia_both_matched_quivers_PA0_noCuts.pdf}}\\
   \hspace{-1cm}
   \subfloat{\includegraphics[width=0.95\textwidth]{airopa/Figures/m53-to-gaia_histAndCorrelation_PA0_noCuts.pdf}}
-  \caption{Same as Figures \ref{fig:m53_PA_compare} and \ref{fig:m53_PA_compare_hst} but for stars matched and transformed to Gaia EDR3. The color bar is given in Gaia G magnitude.} \label{fig:m53_PA_compare_gaia}
+  \caption{Same as Figures \ref{fig:m53_PA_compare} and \ref{fig:m53_PA_compare_hst} but for stars transformed to Gaia EDR3. The color bar is given in Gaia G magnitude.} \label{fig:m53_PA_compare_gaia}
 \end{figure}
 
+\indent The star lists from both PA's were matched and transformed to Gaia EDR3 \cite{brown:2021a}. There were a total of 32 matched stars between both PA's and Gaia, which can be seen as the star symbols in Figure \ref{fig:m53_aen}. The quiver plots in the top panels of Figure \ref{fig:m53_PA_compare_gaia} look nearly identical because the astrometric differences between the two PSF modes is significantly smaller than the astrometric difference between the NIRC2 and Gaia positions. The distribution of astrometric residuals for both PA's peaks at $\sigma_{r}\leq5$ mas, and the faintest stars have the largest residuals, as expected. Generally, the Gaia residuals are large for several reason; the coordinate system transformation between NIRC2 and Gaia is larger than NIRC2 to HST because the Gaia astrometric precision is much larger than HST (or NIRC2), particularly in crowded stellar fields (CITE). Additional considerations need to be made when matching the two PA's to Gaia (i.e. astrometric fitting errors described in \cite{brown:2018a} and \cite{brown:2021a}). In particular the ``astrometric excess noise ($\epsilon$)" parameter is described as the excess uncertainty that must be added in quadrature to obtain a statistically acceptable astrometric solution. Further, the excess term $\epsilon$ is introduced in order to effectively reduce the statistical weight of observations that may be affected by things like instrument and attitude modeling errors.
+\\
+\indent Initially, 32 stars are cross-matched to Gaia, of which 30 have $\epsilon <  10$ mas, which corresponds to less than 1 NIRC2 pixel (Figure \ref{fig:m53_aen}). Further, we make a cut at $\epsilon <  5$ mas (Figure \ref{fig:m53_aen} vertical line) to reject noisier stars by this metric, which leaves 24 Gaia stars used for the final transformation. More information on this astrometric noise term is given in \cite{lindegren:2012a}. A final detail worth noting is the PSF-fitting and source extraction are not strictly centroid-conserving. This means the flux weighted centroid that is measured by AIROPA does not represent the `true' centroid position, and is particularly important for off-axis stars that suffer from significant anisoplanatism. This effect is estimated to be at the ${\sim}5$ mas level, at worst.
+
+%\begin{table}[!h]
+%\caption{M53 astrometric residuals from NIRC2, HST, and Gaia}
+%\setlength{\tabcolsep}{8.0pt}
+%\begin{center}
+%\begin{tabular}{lcccccc}
+%    \hline\hline
+%    {} & {} & \multicolumn{1}{c}{PA 0} & {} & {} & \multicolumn{1}{c}{PA 90}\\
+%    \cmidrule(lr){2-4}\cmidrule(l){5-7}
+%        Ref. Frame & $N_{\textrm{matched}}$ & $\langle \Delta r_{\textrm{s}}\rangle$ & $\langle \Delta r_{\textrm{v}}\rangle$ & $N_{\textrm{matched}}$ & $\langle \Delta r_{\textrm{s}}\rangle$ & $\langle \Delta r_{\textrm{v}}\rangle$\\
+%        \hline
+%        PA 0 & -- &  -- & -- & 94 & $2.43 ^ {+4.36}_{-0.49}$ & $2.89 ^ {+4.92}_{-0.68}$\\
+%        PA 90 & 94 & $2.53 ^ {+4.33}_{-0.47}$ & $2.82 ^ {+4.65}_{-0.51}$ & -- & -- & --\\
+%        HST & 90 &  $2.05 ^ {+0.5}_{-0.3}$ & $1.1 ^ {+0.5}_{-0.3}$ & 167 & $1.1 ^ {+0.5}_{-0.2}$ & XX\\
+%        Gaia & 25 &  $3.1 ^ {+1.5}_{-1.2}$ & $3.4 ^ {+0.5}_{-0.2}$ & 25 & $1.1 ^ {+0.5}_{-0.2}$ & YY\\
+%        \hline
+%\end{tabular}
+%\end{center}
+%\label{tab:m53-AstromColor-results}
+%\end{table}
+
 \begin{table}[!h]
-\caption{M53 astrometric and color results with HST and Gaia}
-\setlength{\tabcolsep}{8.0pt}
+\caption{M53 astrometric residuals from NIRC2, HST, and Gaia}
+\setlength{\tabcolsep}{11.0pt}
 \begin{center}
-\begin{tabular}{lcccccc}
+\begin{tabular}{lccc}
     \hline\hline
-    {} & {} & \multicolumn{1}{c}{PA 0} & {} & {} & \multicolumn{1}{c}{PA 90}\\
-    \cmidrule(lr){2-4}\cmidrule(l){5-7}
-        Reference Frame & $N_{\textrm{matched}}$ & $\delta r_{\textrm{Single}}$ & Variable & $N_{\textrm{matched}}$ & Single & Variable\\
+    {} & {} & \multicolumn{1}{c}{PA 0}\\
+    \cmidrule(lr){2-4}
+        Ref. Frame & $N_{\textrm{matched}}$ & $\langle \Delta r_{\textrm{s}}\rangle$ [mas] & $\langle \Delta r_{\textrm{v}}\rangle$ [mas]\\
         \hline
-        PA 0 & -- &  -- & -- & 94 & $1.15 \pm 1.60$ & 72\\
-        PA 90 & 94 & $0.02 \pm 0.07$ & $0.10 \pm 0.08$ & -- & -- & --\\
-        HST & 72 &  $-0.02 \pm 0.08$ & $0.07 \pm 0.09$ & $0.33 \pm 1.29$ & $1.15 \pm 1.60$ & 72\\
-        Gaia & 72 &  $-0.02 \pm 0.08$ & $0.07 \pm 0.09$ & $0.33 \pm 1.29$ & $1.15 \pm 1.60$ & 72\\\hline
+        PA 90 & 94 & $2.53 ^ {+1.59}_{-0.47}$ & $2.82 ^ {+1.67}_{-0.51}$\\
+        HST & 90 &  $1.93 ^ {+1.39}_{-0.44}$ & $2.04 ^ {+1.43}_{-0.45}$\\
+        Gaia & 25 &  $7.61 ^ {+2.76}_{-1.19}$ & $7.35 ^ {+2.71}_{-1.12}$\\
+        \hline
+        {} & {} & PA 90 & {}\\
+        \cmidrule(lr){2-4}
+        PA 0 & 94 & $2.43 ^ {+1.56}_{-0.49}$ & $2.89 ^ {+1.70}_{-0.68}$\\
+        HST & 157 &  $1.85 ^ {+1.36}_{-0.43}$ & $1.99 ^ {+1.42}_{-0.45}$\\
+        Gaia & 25 &  $7.39 ^ {+2.72}_{-1.20}$ & $7.80 ^ {+2.79}_{-1.25}$\\
+        \hline
 \end{tabular}
 \end{center}
-\label{tab:m53-AstromColor-results}
+\label{tab:m53-AstromResidual-results}
 \end{table}
 
 %----------------Discussion and Conclusions------------------------------------------------------------------------------------------------------------
